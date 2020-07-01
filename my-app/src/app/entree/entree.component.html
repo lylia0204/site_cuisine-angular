@@ -1,0 +1,28 @@
+<div class="box">
+    <div class="container mt-5">
+        <h1>entree works!</h1>
+        <div class="row">
+
+            <div *ngFor="let entree of recettes" class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" [src]="entree.imageRecette">
+                    <div class="card-block">
+                        <h5 class="text-bold">{{entree.nomRecette}}</h5>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- <div class="box-part text-center">
+                <img class="card-img-top" height="350" [src]="entree.imageRecette" alt="image entree" />
+                <div class="card-img-overlay">
+                    <p>{{entree.nomRecette}}</p>
+                </div>
+            </div>
+          </div>
+        </div> -->
+        </div>
+    </div>
+</div>
