@@ -10,6 +10,13 @@ import { FormsModule } from '@angular/forms';
 import { EntreeComponent } from './entree/entree.component';
 import { RecetteComponent } from './recette/recette.component'; 
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
+
+import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -18,7 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     BasicComponent,
     EntreeComponent,
-    RecetteComponent
+    RecetteComponent,
+    LoginComponent ,
+    UserComponent,
+    RegisterComponent,
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
