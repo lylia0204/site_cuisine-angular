@@ -7,11 +7,35 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class RecetteService {
-
+ 
 
 
   public recupererRecette() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette";
+    let url = "./recette-api/public/recettes";
+    return this.http.get<Recette[]>(url);
+  }
+  public recupererRecetteEntree() : Observable<Recette[]>{
+    let url = "./recette-api/public/recette?cat_=entree";
+    return this.http.get<Recette[]>(url);
+  }
+
+  public recupererRecetteDessert() : Observable<Recette[]>{
+    let url = "./recette-api/public/recette?cat_=dessert";
+    return this.http.get<Recette[]>(url);
+  }
+  
+  public recupererRecettePlat() : Observable<Recette[]>{
+    let url = "./recette-api/public/recette?cat_=plat";
+    return this.http.get<Recette[]>(url);
+  }
+
+  public recupererRecetteBoisson() : Observable<Recette[]>{
+    let url = "./recette-api/public/recette?cat_=boisson";
+    return this.http.get<Recette[]>(url);
+  }
+
+  public recupererRecetteAperitif() : Observable<Recette[]>{
+    let url = "./recette-api/public/recette?cat_=aperitif";
     return this.http.get<Recette[]>(url);
   }
 

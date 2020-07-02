@@ -10,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { EntreeComponent } from './entree/entree.component';
 import { RecetteComponent } from './recette/recette.component'; 
 import { HttpClientModule } from '@angular/common/http';
+import { AccueilComponent } from './accueil/accueil.component';
+import { PlatComponent } from './plat/plat.component';
+import { BoissonComponent } from './boisson/boisson.component';
+import { DessertComponent } from './dessert/dessert.component';
+import { AperitifComponent } from './aperitif/aperitif.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     BasicComponent,
     EntreeComponent,
-    RecetteComponent
+    RecetteComponent,
+    AccueilComponent,
+    PlatComponent,
+    BoissonComponent,
+    DessertComponent,
+    AperitifComponent
   ],
   imports: [
     BrowserModule,

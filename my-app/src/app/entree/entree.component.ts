@@ -9,11 +9,12 @@ import { RecetteService } from '../common/service/recette.service';
 })
 export class EntreeComponent implements OnInit {
 
+  entree : "entree"
   recettes: Recette[] 
   constructor(public recetteService : RecetteService) { }
 
   ngOnInit(): void {
-    this.recetteService.recupererRecette()
+    this.recetteService.recupererRecetteEntree()
     .subscribe(
       recette => {this.recettes = recette},
       error => { console.log(error)}
