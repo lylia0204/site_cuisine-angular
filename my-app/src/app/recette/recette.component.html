@@ -3,26 +3,33 @@
     <h1>recette works!</h1>
     <div class="card-group">
       <div *ngFor="let recette of recettes" class="col-sm-4 col-md-4 col-lg-3 mt-4">
-        <div class="card">
-          <img class="card-img-top" [src]="recette.imageRecette">
-          <div class="card-body">
-            <h5 class="card-title">{{recette.nomRecette}}</h5>
-          </div>
-          <div class="card-footer">
-            <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
-            <span class="float-right">{{recette.note}}</span>
-            <span><i class=""></i>{{recette.difficulte}}</span>
-          </div>
+        <div class="card" (click)="recupererIdRecette(recette)">
+          
+            <!-- [(ngModel)]="afficherPageService.idRecette" -->
+            <img class="card-img-top" [src]="recette.imageRecette" >
+
+
+            <!-- <img class="card-img-top" src="../../assets/imgAccueil/17159.jpg" alt="..."> -->
+            <div class="card-body">
+              <h5 class="card-title">{{recette.nomRecette}}</h5>
+            </div>
+            <div class="card-footer">
+              <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+              <button class="qqlChose" ></button>
+              <span class="float-right">{{recette.note}}</span>
+              <span><i class=""></i>{{recette.difficulte}}</span>
+            </div>
+          
         </div>
       </div>
 
-        
-        
-         
-          <!-- <div class="card-footer">
+
+
+
+      <!-- <div class="card-footer">
             
           </div> -->
-        
+
 
       <!-- <div class="row">
         <div *ngFor="let recette of recettes" class="col-sm-4">

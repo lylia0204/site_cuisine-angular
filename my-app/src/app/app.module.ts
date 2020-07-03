@@ -15,6 +15,7 @@ import { PlatComponent } from './plat/plat.component';
 import { BoissonComponent } from './boisson/boisson.component';
 import { DessertComponent } from './dessert/dessert.component';
 import { AperitifComponent } from './aperitif/aperitif.component';
+import { PageRecetteComponent } from './page-recette/page-recette.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AperitifComponent } from './aperitif/aperitif.component';
     PlatComponent,
     BoissonComponent,
     DessertComponent,
-    AperitifComponent
+    AperitifComponent,
+    PageRecetteComponent
   ],
   imports: [
     BrowserModule,

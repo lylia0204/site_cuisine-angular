@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RecetteService } from '../common/service/recette.service';
+import { AfficherPageService } from '../common/service/afficher-page.service';
 import { Recette } from '../common/data/recette';
+import { Router } from '@angular/router';
+
+
 
 
 @Component({
@@ -10,7 +14,19 @@ import { Recette } from '../common/data/recette';
 })
 export class RecetteComponent implements OnInit {
 recettes: Recette[] 
-  constructor(public recetteService : RecetteService) { }
+idRecette: string;
+
+
+
+  constructor(public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) { }
+
+  recupererIdRecette(recette){
+    this.idRecette =recette._id;
+    console.log("===========id"+this.idRecette)
+    sessionStorage.setItem("_id", this.idRecette);
+    this._router.navigate(['/pageRecette', this.idRecette]);
+    
+  }
 
   ngOnInit(): void {
     this.recetteService.recupererRecette()
@@ -18,7 +34,28 @@ recettes: Recette[]
       recette => {this.recettes = recette},
       error => { console.log(error)}
     )
+    
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // selectEvenement(evenement : Evenement){
   //   console.log('Vous avez sélectionné ' + evenement.titre);

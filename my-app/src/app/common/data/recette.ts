@@ -1,8 +1,12 @@
-export interface Recette {
 
-    nomRecette : string;
-    imageRecette : string;
-    note : string;
-    tpsTotal : string;
-    difficulte :string;
+export class Recette{
+    constructor(
+      public  _id : string,
+      public nomRecette : string,
+      public  imageRecette : string,
+      public note : string,
+      public  tpsTotal : string,
+      public  difficulte :string,
+              
+    ){}
 }

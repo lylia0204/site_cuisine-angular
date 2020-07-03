@@ -7,6 +7,7 @@ import { DessertComponent } from './dessert/dessert.component';
 import { PlatComponent } from './plat/plat.component';
 import { BoissonComponent } from './boisson/boisson.component';
 import { AperitifComponent } from './aperitif/aperitif.component';
+import { PageRecetteComponent } from './page-recette/page-recette.component';
 
 
 const routes: Routes = [ 
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'dessert', component: DessertComponent },
   { path: 'boisson', component: BoissonComponent },
   { path: 'aperitif', component: AperitifComponent },
-  { path: 'recette', component: RecetteComponent }
+  { path: 'recette', component: RecetteComponent },
+  { path: 'pageRecette/:id', component: PageRecetteComponent }
+ 
 ];
 
 @NgModule({
