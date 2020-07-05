@@ -22,7 +22,6 @@ idRecette: string;
 
   recupererIdRecette(recette){
     this.idRecette =recette._id;
-    console.log("===========id"+this.idRecette)
     sessionStorage.setItem("_id", this.idRecette);
     this._router.navigate(['/pageRecette', this.idRecette]);
     
@@ -34,7 +33,6 @@ idRecette: string;
       recette => {this.recettes = recette},
       error => { console.log(error)}
     )
-    
   }
 
 

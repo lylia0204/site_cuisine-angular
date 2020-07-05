@@ -9,29 +9,23 @@ import { Recette } from '../common/data/recette';
 })
 export class PageRecetteComponent implements OnInit {
   recette: Recette
-  pont: any;
+  // ingredients = this.recette.ingredients
+  // materiel = this.recette.materiels
+  // etape = this.recette.etapesPreparation
 
   constructor(public afficherPageService: AfficherPageService) { }
-
 
   id = sessionStorage.getItem("_id");
 
   ngOnInit(): void {
-
     this.recupererRecette(this.id);
     console.log(this.id)
-
   }
   recupererRecette(id) {
-    console.log("**********" + id)
     this.afficherPageService.recupererRecetteById(id).subscribe(
         data => { this.recette = data;}
     )
   }
-
-
-
-
 }
 
 

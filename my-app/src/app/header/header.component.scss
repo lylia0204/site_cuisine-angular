@@ -3911,6 +3911,7 @@ input[type=button].btn-block {
 }
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
+ 
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -3931,6 +3932,8 @@ input[type=button].btn-block {
 }
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   border-color: #e9ecef #e9ecef #dee2e6;
+  //ajouter
+  color : red;
 }
 .nav-tabs .nav-link.disabled {
   color: #6c757d;
@@ -10105,8 +10108,10 @@ img::-moz-selection {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border: none;
-    background-color: #888845;
-    opacity : 0.2;
+    background-color: #fed136;
+    opacity : 0.9;
+    //ajouter
+    color : black;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
@@ -10120,7 +10125,7 @@ img::-moz-selection {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #888845;
+    background-color: #fed136;
     opacity: 1 ;
   }
   #mainNav.navbar-shrink .navbar-brand {
@@ -10142,7 +10147,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../../assets/imgAccueil/17159.jpg");
+  background-image: url("https://lylaya-projet-bucket.s3.eu-west-3.amazonaws.com/imageAcceuil/imgTarteFraise.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

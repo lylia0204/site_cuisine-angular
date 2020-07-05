@@ -1,47 +1,24 @@
-<div class="box">
-  <div class="container mt-5">
-    <h1>recette works!</h1>
-    <div class="card-group">
-      <div *ngFor="let recette of recettes" class="col-sm-4 col-md-4 col-lg-3 mt-4">
-        <div class="card" (click)="recupererIdRecette(recette)">
-          
-            <!-- [(ngModel)]="afficherPageService.idRecette" -->
-            <img class="card-img-top" [src]="recette.imageRecette" >
-
-
-            <!-- <img class="card-img-top" src="../../assets/imgAccueil/17159.jpg" alt="..."> -->
-            <div class="card-body">
-              <h5 class="card-title">{{recette.nomRecette}}</h5>
-            </div>
-            <div class="card-footer">
-              <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
-              <button class="qqlChose" ></button>
-              <span class="float-right">{{recette.note}}</span>
-              <span><i class=""></i>{{recette.difficulte}}</span>
-            </div>
-          
-        </div>
+<section class="page-section bg-light" id="portfolio">
+  <div class="container col-sm-7">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">Les meilleures Recettes</h2>
+          <h3 class="section-subheading text-muted">Réunis pour VOUS !!!</h3>
       </div>
-
-
-
-
-      <!-- <div class="card-footer">
-            
-          </div> -->
-
-
-      <!-- <div class="row">
-        <div *ngFor="let recette of recettes" class="col-sm-4">
-          <div class="card"> -->
-      <!-- <div class="box-part text-center">
-        <img class="card-img-top" height="350" [src]="recette.imageRecette" alt="image recette" />
-        <div class="card-img-overlay">
-          <p>{{recette.nomRecette}}</p>
-        </div> -->
-      <!-- </div>
-    </div> -->
-      <!-- </div> -->
-    </div>
+      <div class="row">
+          <div *ngFor="let recette of recettes" class="col-lg-4 col-sm-5 mb-4">
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-toggle="modal" (click)="recupererIdRecette(recette)">
+                      <div class="portfolio-hover">
+                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" [src]="recette.imageRecette" alt="...." />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">{{recette.nomRecette}}</div>
+                      <div class="portfolio-caption-subheading text-muted">{{recette.note}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-</div>
+</section>

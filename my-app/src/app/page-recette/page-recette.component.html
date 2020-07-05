@@ -1,92 +1,38 @@
-<p>page-recette works!</p><body>
-    <h1>Poisson à la sénégalaise (Penda Mbaye)</h1>
-    <table id="entete"><tbody><tr>
-    <td><img src="poisson_senegalaise_gd.jpg" alt="image recette"></td>
-    <td>Difficulté : <strong>facile</strong><br><br>Temps de préparation et cuisson : <strong>1 h 45</strong>
-    </td>
-    </tr></tbody></table>
-    <div id="ingredients">
+<p>page-recette works!</p>
+
+<body>
+    <h1>{{recette.nomRecette}}</h1>
+    <table id="entete">
+        <tbody>
+            <tr>
+                <td><img src="recette.imageRecette_" alt="image recette"></td>
+                <td>Difficulté : <strong>{{recette.difficulte}}</strong><br><br>Temps de préparation et cuisson : <strong>{{recette.tpsTotal}}</strong>
+                        <br>Temps de préparation : <strong>{{recette.tpsPreparation}}</strong>
+                            <br>Temps de cuisson : <strong>{{recette.tpsCuisson}}</strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <h2>Ingédients :</h2>
-    <ul>
-        <li>
-            poisson maigre ou charnu
-         : <strong>1,5 kg</strong>
-    </li>
-        <li>
-            fruits de mer (moules, coques, crevettes...)
-         : <strong>50 g</strong>
-    </li>
-        <li>
-            tomate concentrée
-         : <strong>150 g</strong>
-    </li>
-        <li>
-            oignons
-         : <strong>150 g</strong>
-    </li>
-        <li>
-            riz
-         : <strong>500 g</strong>
-    </li>
-        <li>3 
-            aubergines
-        </li>
-        <li>3 
-            carottes
-        </li>
-        <li>3 
-            navets
-        </li>
-        <li> 
-            piment
-        </li>
-        <li>
-            tomates fraîches
-         : <strong>200 g</strong>
-    </li>
-        <li>1 
-            poivron vert
-        </li>
-        <li> 
-            chou-fleur
-        </li>
-        <li> 
-              huile d'olive
-        </li>
-        <li>1 
-              gousse d'ail
-        </li>
-        <li> 
-              sel
-        </li>
-        <li> 
-              poivre
-        </li>
+    <div *ngFor="let ingredient of recette.ingredients" id="ingredients">
+        <ul>
+            <li>
+                <strong>{{ingredient}}</strong>
+            </li>
         </ul>
     </div>
-    <div id="etapes">
     <h2>Préparation : </h2>
-    <ol>
-        <li>Faire suer à l'huile d'arachide, les oignons hachés, l'ail écrasé et le poivron vert émincé finement.</li>
-        <li>Concasser les tomates et tailler en paysanne les carottes et les navets.</li>
-        <li>Les ajouter dans la cocotte.</li>
-        <li>Ajouter également le concentré de tomates.</li>
-        <li>Bien remuer.</li>
-        <li>Mouiller avec un grand verre d'eau.</li>
-        <li>Ajouter les aubergines taillées en dés le chou-fleur coupé en sommités et bien mélanger.</li>
-        <li>Cuire à couvert pendant une vingtaine de minutes.</li>
-        <li>Retirer le couvercle et disposer sur les légumes les morceaux de poisson coupé en gros morceaux.</li>
-        <li>Ajouter les fruits de mer au dessus du poisson et cuire à couvert une quinzaine de minutes.</li>
-        <li>Le poisson va cuire à l'étouffé en s'imprégnant des parfums des légumes.</li>
-        <li>Au terme de la cuisson, retirer le couvercle remuer délicatement afin de vérifier que la sauce n'ait pas attaché au fond du récipient de cuisson. Rectifier l'assaisonnement.</li>
-        <li>Réserver au chaud.</li>
-        <li>Servir chaud.</li>
-        </ol>
+    <div *ngFor="let etape of recette.etapesPreparation" id="etapes">
+        <ul>
+            <li>{{etape}}
+            </li>
+            
+        </ul>
     </div>
     <div id="pied">
-    <h2>Accord met-vin : </h2>
+        <h2>Accord met-vin : </h2>
         un bandol blanc
-        </div>
-    
-    
-    </body>
+    </div>
+
+
+</body>

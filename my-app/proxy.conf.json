@@ -1,3 +1,4 @@
+
 { "/recette-api" : { "secure" : "false" ,
-    "target" : "http://localhost:8887" } 
+    "target" : "http://ec2-35-181-9-246.eu-west-3.compute.amazonaws.com:8887"}
 }

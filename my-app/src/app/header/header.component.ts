@@ -13,9 +13,6 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
 
-//  callNavBar(){
-//    myNavBar();
-//  }
 
   ngOnInit(): void {
 
@@ -27,6 +24,8 @@ export class HeaderComponent implements OnInit {
           menuArea.classList.remove("navbar-shrink");
       }
   })
+
+  
 
   }
 
