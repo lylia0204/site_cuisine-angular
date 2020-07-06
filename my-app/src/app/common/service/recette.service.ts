@@ -8,19 +8,19 @@ import { HttpClient } from '@angular/common/http'
 })
 export class RecetteService {
  
-
+preUrl = "http://ec2-35-181-9-246.eu-west-3.compute.amazonaws.com:8887"
 
   public recupererRecette() : Observable<Recette[]>{
-    let url = "./recette-api/public/recettes";
+    let url = this.preUrl+"/recette-api/public/recettes";
     return this.http.get<Recette[]>(url);
   }
   public recupererRecetteEntree() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=entree";
+    let url = this.preUrl+"/recette-api/public/recette?cat_=entree";
     return this.http.get<Recette[]>(url);
   }
 
   public recupererRecetteDessert() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=dessert";
+    let url = this.preUrl+"/recette-api/public/recette?cat_=dessert";
     return this.http.get<Recette[]>(url);
   }
   
