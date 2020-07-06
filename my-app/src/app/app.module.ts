@@ -16,6 +16,12 @@ import { BoissonComponent } from './boisson/boisson.component';
 import { DessertComponent } from './dessert/dessert.component';
 import { AperitifComponent } from './aperitif/aperitif.component';
 import { PageRecetteComponent } from './page-recette/page-recette.component';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,12 @@ import { PageRecetteComponent } from './page-recette/page-recette.component';
     BoissonComponent,
     DessertComponent,
     AperitifComponent,
-    PageRecetteComponent
+    PageRecetteComponent,
+    LoginComponent ,
+    UserComponent,
+    RegisterComponent,
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,7 @@ import { PageRecetteComponent } from './page-recette/page-recette.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

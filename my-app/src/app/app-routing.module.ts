@@ -8,6 +8,11 @@ import { PlatComponent } from './plat/plat.component';
 import { BoissonComponent } from './boisson/boisson.component';
 import { AperitifComponent } from './aperitif/aperitif.component';
 import { PageRecetteComponent } from './page-recette/page-recette.component';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [ 
@@ -19,7 +24,12 @@ const routes: Routes = [
   { path: 'boisson', component: BoissonComponent },
   { path: 'aperitif', component: AperitifComponent },
   { path: 'recette', component: RecetteComponent },
-  { path: 'pageRecette/:id', component: PageRecetteComponent }
+  { path: 'pageRecette/:id', component: PageRecetteComponent },
+  { path: 'login', component: LoginComponent },
+  {path: 'user',component: UserComponent},
+  {path: 'admin', component: AdminComponent},
+  {path: 'signup',component: RegisterComponent},
+  {path: 'home',component: HomeComponent},
  
 ];
 

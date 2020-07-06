@@ -13,6 +13,19 @@
               <li class="nav-item"><a class="nav-link" routerLink="/plat">Plats</a></li>
               <li class="nav-item"><a class="nav-link" routerLink="/dessert">Desserts</a></li>
               <li class="nav-item"><a class="nav-link" routerLink="/boisson">Boissons</a></li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" routerLink="home">Accueil</a></li>
+              <li *ngIf="authority === 'user'" class="nav-item">
+                <a class="nav-link" routerLink="user">Espace Utilisteur</a>
+              </li>
+              <li *ngIf="authority === 'admin'" class="nav-item">
+                <a class="nav-link" routerLink="/admin">Espace Admin</a>
+              </li>
+              <li *ngIf="!authority" class="nav-item">
+                <a class="nav-link" routerLink='login'>Login</a>
+              </li>
           </ul>
           
       </div>
