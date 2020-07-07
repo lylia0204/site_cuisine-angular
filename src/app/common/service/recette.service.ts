@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class RecetteService {
  
-preUrl = "http://ec2-35-180-25-98.eu-west-3.compute.amazonaws.com:8887"
-
+  preUrl = "http://ec2-15-236-179-45.eu-west-3.compute.amazonaws.com:8887"
 
   public recupererRecette() : Observable<Recette[]>{
     let url = this.preUrl+"/recette-api/public/recettes";
