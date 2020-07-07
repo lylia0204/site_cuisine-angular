@@ -14,11 +14,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - cd ./my-app
       - ng build
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - './my-app/dist/*'
+    - 'dist/my-app/*'
