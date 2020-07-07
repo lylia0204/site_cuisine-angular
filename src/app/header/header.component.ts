@@ -11,7 +11,7 @@ import { TokenStorageService } from '../auth/token-storage.service';
 export class HeaderComponent implements OnInit {
   roles: string[];
   authority: string;
-
+  info : any;
  constructor(private tokenStorage: TokenStorageService) { }
 
 
@@ -38,7 +38,9 @@ export class HeaderComponent implements OnInit {
     });
   }
   
-
+  this.info = {
+    username: this.tokenStorage.getUsername(),
+  };
   }
 
  
