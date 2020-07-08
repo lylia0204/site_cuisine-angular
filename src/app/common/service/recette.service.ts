@@ -25,17 +25,17 @@ export class RecetteService {
   }
   
   public recupererRecettePlat() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=plat";
+    let url = this.preUrl +"/recette-api/public/recette?cat_=plat";
     return this.http.get<Recette[]>(url);
   }
 
   public recupererRecetteBoisson() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=boisson";
+    let url = this.preUrl +"/recette-api/public/recette?cat_=boisson";
     return this.http.get<Recette[]>(url);
   }
 
   public recupererRecetteAperitif() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=aperitif";
+    let url = this.preUrl +"/recette-api/public/recette?cat_=aperitif";
     return this.http.get<Recette[]>(url);
   }
 
