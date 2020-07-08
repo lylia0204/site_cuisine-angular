@@ -20,7 +20,7 @@ export class RecetteService {
   }
 
   public recupererRecetteDessert() : Observable<Recette[]>{
-    let url = this.preUrl+"/recette-api/public/recette?cat_=dessert";
+    let url = this.preUrl+"/recette-api/public/recette?cat_=dessert"; 
     return this.http.get<Recette[]>(url);
   }
   
