@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 export class AfficherPageService {
 
  
-  
+  preUrl = "http://ec2-15-188-47-179.eu-west-3.compute.amazonaws.com:8887/"
 
   public recupererRecetteById(idRecette) : Observable<Recette>{
-    let url = "./recette-api/public/recette/"+ idRecette; //a verifier
+    let url = this.preUrl+ "/recette-api/public/recette/"+ idRecette; //a verifier
     return this.http.get<Recette>(url);
   }
 

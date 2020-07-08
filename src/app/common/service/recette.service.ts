@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class RecetteService {
  
-preUrl = "http://ec2-35-180-25-98.eu-west-3.compute.amazonaws.com:8887"
-
+  preUrl = "http://ec2-15-188-47-179.eu-west-3.compute.amazonaws.com:8887/"
 
   public recupererRecette() : Observable<Recette[]>{
     let url = this.preUrl+"/recette-api/public/recettes";
@@ -26,17 +25,17 @@ preUrl = "http://ec2-35-180-25-98.eu-west-3.compute.amazonaws.com:8887"
   }
   
   public recupererRecettePlat() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=plat";
+    let url = this.preUrl+"/recette-api/public/recette?cat_=plat";
     return this.http.get<Recette[]>(url);
   }
 
   public recupererRecetteBoisson() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=boisson";
+    let url = this.preUrl+"/recette-api/public/recette?cat_=boisson";
     return this.http.get<Recette[]>(url);
   }
 
   public recupererRecetteAperitif() : Observable<Recette[]>{
-    let url = "./recette-api/public/recette?cat_=aperitif";
+    let url = this.preUrl+"/recette-api/public/recette?cat_=aperitif";
     return this.http.get<Recette[]>(url);
   }
 
