@@ -1,38 +1,150 @@
-<p>page-recette works!</p>
-
 <body>
-    <h1>{{recette.nomRecette}}</h1>
-    <table id="entete">
-        <tbody>
-            <tr>
-                <td><img src="recette.imageRecette_" alt="image recette"></td>
-                <td>Difficulté : <strong>{{recette.difficulte}}</strong><br><br>Temps de préparation et cuisson : <strong>{{recette.tpsTotal}}</strong>
-                        <br>Temps de préparation : <strong>{{recette.tpsPreparation}}</strong>
-                            <br>Temps de cuisson : <strong>{{recette.tpsCuisson}}</strong>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h2>Ingédients :</h2>
-    <div *ngFor="let ingredient of recette.ingredients" id="ingredients">
-        <ul>
-            <li>
-                <strong>{{ingredient}}</strong>
-            </li> 
-        </ul>
-    </div>
-    <h2>Préparation : </h2>
-    <div *ngFor="let etape of recette.etapesPreparation" id="etapes">
-        <ul>
-            <li>{{etape}}
-            </li>
-            
-        </ul>
-    </div>
-    <div id="pied">
-        <h2>Accord met-vin : </h2>
-        un bandol blanc
-    </div>
+    <section class="menu_list mt-60 mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12" id="id-section">
+                    <div class="section-title text-center mb-60">
+                        <!-- <p>titre</p> -->
+                        <h4>{{recette.nomRecette}}</h4>
 
 
+                        <!-- <div style="text-align:center">
+                            
+                            <star-rating value="{{recette.note}}" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" ></star-rating>
+                          </div> -->
+
+
+                          <div class="card">
+                        <rating [ngModel]="rate" [max]="max" [readonly]="isReadonly" size="50"></rating>
+                                <b>{{recette.note}}</b> 
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-lg-6">
+                        <div class="about-image clearfix">
+                            <div class="single-image float-left">
+                                <img src="{{recette.imageRecette}}" alt="">
+                            </div>
+                            <div class="single-image image-tow float-right">
+                                <img src="{{recette.imageRecette}}" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-xl-6 col-md-6">
+                        <div class="recepies_info">
+                            <div class="resepies_details">
+                                <ul>
+                                    <li>
+                                        <p><strong>Recette de {{recette.site}}</strong> </p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Budget :</strong>{{recette.budget}} </p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Difficultée :</strong>{{recette.tpsTotal}} </p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Portion :</strong>{{recette.portion}} </p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+           
+
+
+            </div>
+
+            <div class="tire-tire">
+                
+            </div>
+
+
+            <div class="row" id="recette-temps">
+
+                <div class="col-md-3"><strong>Temps de cuisson :</strong> {{recette.tpsCuisson}}</div>
+                <div class="col-md-3"><strong>Temps de préparation :</strong> {{recette.tpsPreparation}}</div>
+                <div class="col-md-3"><strong>Temps total :</strong>{{recette.tpsTotal}}</div>
+                <div class="col-md-3"> <a class="main-btn mt-25 m4" href="#">Ajouter aux favoris </a></div>
+                
+            </div >
+            <div class="tire-tire">
+                
+            </div>
+
+
+            <div class="row">
+               
+                <div class="tab-content col-xl-12" id="myTabContent">
+                    <div class="tab-pane fade active show" id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
+                        <div class="row">
+
+                            <div class="col-md-3">
+
+                                <div class="single_menu_list">
+                                    <h4>Ingrédients : </h4>
+                                    <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt=""> -->
+                                    <div *ngFor="let ingredient of recette.ingredients" class="menu_content">
+
+                                        <p>{{ingredient}}</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="single_menu_list">
+                                    <h4>Préparation : </h4>
+                                    <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt=""> -->
+                                    <div *ngFor="let etape of recette.etapesPreparation" class="menu_content">
+                                        <h4>{{etape}} </h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+
+                                <div class="single_menu_list">
+                                    <h4>Matériels : </h4>
+                                    <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt=""> -->
+                                    <div *ngFor="let materiel of recette.materiels" class="menu_content">
+
+                                        <p>{{materiel}}</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <div class="box_btn">
+                        <a href="#">COSEIL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>

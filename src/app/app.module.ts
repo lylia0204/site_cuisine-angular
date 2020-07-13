@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,6 +25,9 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
+import { RatingModule } from 'ngx-bootstrap/rating';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,11 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
     BrowserModule,
     HttpClientModule ,
     AppRoutingModule,
-    FormsModule
+    RatingModule.forRoot(),
+    FormsModule,
+    CollapseModule.forRoot(),
+    BrowserAnimationsModule
+    
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

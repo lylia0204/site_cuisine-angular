@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   info : any;
  constructor(private tokenStorage: TokenStorageService) { }
 
-
+ isCollapsed = true;
 
   ngOnInit(): void {
 
