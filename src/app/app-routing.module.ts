@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { RecetteCategorieComponent } from './recette-categorie/recette-categorie.component';
 
 
 const routes: Routes = [ 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'boisson', component: BoissonComponent },
   { path: 'aperitif', component: AperitifComponent },
   { path: 'recette', component: RecetteComponent },
+  { path: 'recetteCategorie', component: RecetteCategorieComponent },
   { path: 'pageRecette/:id', component: PageRecetteComponent },
   { path: 'login', component: LoginComponent },
   {path: 'user',component: UserComponent},

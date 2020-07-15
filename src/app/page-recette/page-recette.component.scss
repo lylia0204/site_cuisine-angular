@@ -5,7 +5,7 @@ body {
 }
 //ajouter
 #id-section{
-    margin-top: 150px;
+    margin-top: 250px;
 }
 #recette-temps{
     margin-top: 30px;
@@ -13,7 +13,7 @@ body {
 
 }
 .mb-60 {
-	margin-bottom: 60px;
+	margin-bottom: 80px;
 }
 .section-title p {
 	font-size: 24px;
@@ -23,7 +23,7 @@ body {
 .section-title h4 {
 	font-size: 40px;
 	text-transform: capitalize;
-	color: #FF5E18;
+	color: #C90103;
 	position: relative;
 	display: inline-block;
 	padding-bottom: 25px;
@@ -38,7 +38,7 @@ body {
 .section-title h4::before, .section-title h4::after {
 	position: absolute;
 	content: "";
-	background-color: #FF5E18;
+	background-color: #C90103;
 }
 #myTabContent {
 	margin-top: 50px;
@@ -55,8 +55,8 @@ body {
 }
 .menu_tab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 	color: white;
-	background-color: #FF5E18;
-	border-color: #FF5E18;
+	background-color: #C90103;
+	border-color: #C90103;
 }
 .single_menu_list {
     position: relative;
@@ -73,7 +73,7 @@ body {
 }
 //ajouter
 .tire-tire{
-    border-bottom: 1px dashed #FF5E18;
+    border-bottom: 1px dashed #C90103;
     padding: 10px;
 
 }
@@ -81,7 +81,7 @@ body {
 
 .single_menu_list h4 {
 	font-size: 20px;
-	border-bottom: 1px dashed #FF5E18;
+	border-bottom: 1px dashed #C90103;
 	padding-bottom: 15px;
 	margin-bottom: 10px;
 }
@@ -89,7 +89,7 @@ body {
 .single_menu_list h4 span {
 	float: right;
 	font-weight: bold;
-	color: #FF5E18;
+	color: #C90103;
 	font-style: italic;
 }
 
@@ -155,14 +155,15 @@ body {
 }
 .main-btn {
     display: inline-block;
-    font-weight: 600;
+    font-weight: 800;
     text-align: center;
-    border: 1px solid #FF5E18;
+    border: 1px solid #C90103;
     padding: 0 30px;
     line-height: 48px;
     color: #fff;
+    border-radius: 35px;
     transition: all .8s ease-out 0s;
-    background-color: #FF5E18;
+    background-color: #C90103;
     letter-spacing: 2px;
     //text-transform: uppercase;
 	text-decoration:none;

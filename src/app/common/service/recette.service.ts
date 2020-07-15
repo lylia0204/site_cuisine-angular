@@ -40,6 +40,12 @@ export class RecetteService {
   }
 
   
+  public recupererRecetteCategorie(categorie:string) : Observable<Recette[]>{
+    let url = this.preUrl+"/recette-api/public/recette?cat_="+categorie;
+    return this.http.get<Recette[]>(url);
+  }
+
+  
   constructor(private http: HttpClient) { }
 
   

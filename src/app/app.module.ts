@@ -28,6 +28,7 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecetteCategorieComponent } from './recette-categorie/recette-categorie.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserComponent,
     RegisterComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    RecetteCategorieComponent
   ],
   imports: [
     BrowserModule,
