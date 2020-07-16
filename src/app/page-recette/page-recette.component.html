@@ -1,9 +1,13 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
 <body>
     <section class="menu_list mt-60 mb-60">
-        <div class="container">
-            <div class="row">
+        <div class="container" id="recette-pdf">
+            <div class="row" >
                 <div class="col-xl-12" id="id-section">
-                    <div class="section-title text-center mb-60">
+                    <div class="section-title text-center mb-60"> 
                         <!-- <p>titre</p> -->
                         <h4>{{recette.nomRecette}}</h4>
 
@@ -82,7 +86,10 @@
                 <div class="col-md-3"><strong>Temps de cuisson :</strong> {{recette.tpsCuisson}}</div>
                 <div class="col-md-3"><strong>Temps de préparation :</strong> {{recette.tpsPreparation}}</div>
                 <div class="col-md-3"><strong>Temps total :</strong>{{recette.tpsTotal}}</div>
-                <div class="col-md-3"> <a class="main-btn mt-25 m4" href="#">Ajouter aux favoris </a></div>
+                <div class="col-md-1"> <a class="main-btn mt-25 m4" href="#">heart </a></div>
+                <!-- <div class="col-md-1"> <a class="main-btn mt-25 m4" (click)="telecharger()">print </a></div> -->
+                <div class="offset-1 col-md-1"> <a class="main-btn mt-25 m4" (click)="telecharger2()">print </a></div>
+                <!-- <div class="col-md-1"> <button (click)="telecharger()">print </button></div> -->
                 
             </div >
             <div class="tire-tire">

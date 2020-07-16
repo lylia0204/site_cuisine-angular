@@ -1,46 +1,55 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
-  <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a>
-      <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" 
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars ml-1"></i>
-      </button> -->
-     <button type="button" class="navbar-toggler navbar-toggler-right" (click)="isCollapsed = !isCollapsed"
-        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic"><i class="fas fa-bars ml-1"></i>
-</button>
-<!-- <hr>
-<div id="collapseBasic" [collapse]="isCollapsed">
-  <div class="well well-lg card card-block card-header">Some content</div>
-</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="row col-lg-12" id="content-navbar">
+
+    <div class="col-sm-12 ">
+    <button type="button" class="navbar-toggler navbar-toggler-left" (click)="isCollapsed = !isCollapsed"
+      data-toggle="collapse" data-target="#navbarResponsive" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseBasic"><i class="fa fa-bars"></i>
+    </button>
+    </div>
+    <div class="collapse navbar-collapse col-sm-3">
+      
+        <a class="navbar-brand js-scroll-trigger " href="#page-top"><img
+              src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image-logo/le-logo-noir.png" alt=""
+              class="img-responsive" /></a>
+      
+    </div>
 
 
+    <div class="col-sm-9 mr-auto">
+    <div class="row">
+      <div class="collapse navbar-collapse col-lg-12" id="collapseBasic" [collapse]="isCollapsed">
 
-      <div class="collapse navbar-collapse" id="collapseBasic" [collapse]="isCollapsed">
-          <ul class="navbar-nav text-uppercase ml-auto">
-              <li class="nav-item"><a class="nav-link" routerLink="/recette">Recettes</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/aperitif">Apéritifs</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/entree">Entréesssssss</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/plat">Plats</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/dessert">Desserts</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/boisson">Boissons</a></li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" routerLink="accueil">Accueil</a></li>
-              <li *ngIf="authority === 'user'" class="nav-item">
-                <a class="nav-link" routerLink="/user">{{info.username}}</a>
-              </li>
-              <li *ngIf="authority === 'admin'" class="nav-item">
-                <a class="nav-link" routerLink="/admin">Espace Admin</a>
-              </li>
-              <li *ngIf="!authority" class="nav-item">
-                <a class="nav-link" routerLink='/login'>Login</a>
-              </li>
-          </ul>
-          
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+          <li *ngIf="authority === 'user'" class="nav-item">
+            <b><a class="nav-link" routerLink="/user">{{info.username}}</a></b>
+          </li>
+          <li *ngIf="authority === 'admin'" class="nav-item">
+            <a class="nav-link" routerLink="/admin">Espace Admin</a>
+          </li>
+          <li *ngIf="!authority" class="nav-item">
+            <b><a class="nav-link" routerLink='/login'>Login</a></b>
+          </li>
+        </ul>
       </div>
+
+      <div class="collapse navbar-collapse col-lg-12" id="collapseBasic" [collapse]="isCollapsed">
+        <ul class="navbar-nav text-uppercase mr-auto offset-1 ">
+          <li class="nav-item"><b><a class="nav-link" routerLink="/recette">Recettes</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('aperitif')">Apéritifs</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('entree')">Entrées</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('plat')">Plats</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('dessert')">Desserts</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('boisson')">Boissons</a></b></li>
+        </ul>
+
+
+      </div>
+
+    </div>
+    </div>
   </div>
 </nav>
-
-  
