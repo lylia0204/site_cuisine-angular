@@ -8,16 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { BasicComponent } from './basic/basic.component';
 import { FormsModule } from '@angular/forms';
-import { EntreeComponent } from './entree/entree.component';
 import { RecetteComponent } from './recette/recette.component'; 
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
-import { PlatComponent } from './plat/plat.component';
-import { BoissonComponent } from './boisson/boisson.component';
-import { DessertComponent } from './dessert/dessert.component';
-import { AperitifComponent } from './aperitif/aperitif.component';
 import { PageRecetteComponent } from './page-recette/page-recette.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -29,27 +23,23 @@ import { RatingModule } from 'ngx-bootstrap/rating';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecetteCategorieComponent } from './recette-categorie/recette-categorie.component';
+import { RecetteRechercheComponent } from './recette-recherche/recette-recherche.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BasicComponent,
-    EntreeComponent,
     RecetteComponent,
     AccueilComponent,
-    PlatComponent,
-    BoissonComponent,
-    DessertComponent,
-    AperitifComponent,
     PageRecetteComponent,
     LoginComponent ,
     UserComponent,
     RegisterComponent,
     AdminComponent,
     HomeComponent,
-    RecetteCategorieComponent
+    RecetteCategorieComponent,
+    RecetteRechercheComponent
   ],
   imports: [
     BrowserModule,

@@ -10430,3 +10430,183 @@ section#contact form#contactForm :-ms-input-placeholder {
   position: relative;
   text-transform: capitalize;
 }
+//////////////////////////////////////////////////////////////////////////////////////////////
+// .search {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   -webkit-transform: translateX(-50%) translateY(-50%);
+//           transform: translateX(-50%) translateY(-50%);
+// }
+// .search * {
+//   outline: none;
+//   box-sizing: border-box;
+// }
+// .search__wrapper {
+//   //position: absolute;
+//   margin-right: 5rem;
+//   color: transparent;
+// }
+// .search__field {
+//   width: 50px;
+//   height: 50px;
+//   color: transparent;
+//   font-family: Lato, sans-serif;
+//   font-size: 1.35em;
+//   padding: 0.35em 50px 0.35em 0;
+//   border: 1px solid transparent;
+//   border-radius: 0;
+//   cursor: pointer;
+//   transition: all 0.3s ease-in-out;
+// }
+// .search__field:focus {
+//   //bordure barre ouverte
+//   border-bottom-color: #ccc;
+//   width: 50vw;
+//   color: #2b2b2b;
+//   cursor: default;
+// }
+// .search__field:focus ~ .search__icon {
+//   background-color: transparent;
+//   cursor: pointer;
+//   pointer-events: auto;
+// }
+// .search__icon {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   //couleur du rond de recherche (en jaune)
+//   background-color: #e9f1f4;
+//   width: 50px;
+//   height: 50px;
+//   font-size: 1.35em;
+//   text-align: center;
+//   //bordure du rond de recherche
+//   border-color: transparent;
+//   border-radius: 50%;
+//   pointer-events: none;
+//   display: inline-block;
+//   transition: background-color 0.2s ease-in-out;
+// }
+// .search__field::-webkit-input-placeholder {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   transition-property: top, color;
+//   transition-duration: .1s;
+//   -webkit-transform: translateZ(0);
+//   transform: translateZ(0);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+//   -webkit-perspective: 1000;
+//   perspective: 1000;
+// }
+// .search__field:-moz-placeholder {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   transition-property: top, color;
+//   transition-duration: .1s;
+//   -webkit-transform: translateZ(0);
+//   transform: translateZ(0);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+//   -webkit-perspective: 1000;
+//   perspective: 1000;
+// }
+// .search__field::-moz-placeholder {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   transition-property: top, color;
+//   transition-duration: .1s;
+//   -webkit-transform: translateZ(0);
+//   transform: translateZ(0);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+//   -webkit-perspective: 1000;
+//   perspective: 1000;
+// }
+// .search__field:-ms-input-placeholder {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   transition-property: top, color;
+//   transition-duration: .1s;
+//   -webkit-transform: translateZ(0);
+//   transform: translateZ(0);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+//   -webkit-perspective: 1000;
+//   perspective: 1000;
+// }
+// .search__field::-webkit-input-placeholder[style*=hidden] {
+//   color: #83b0c1;
+//   font-size: .65em;
+//   font-weight: normal;
+//   top: -20px;
+//   opacity: 1;
+//   visibility: visible !important;
+// }
+// .search__field:-moz-placeholder[style*=hidden] {
+//   color: #83b0c1;
+//   font-size: .65em;
+//   font-weight: normal;
+//   top: -20px;
+//   opacity: 1;
+//   visibility: visible !important;
+// }
+// .search__field::-moz-placeholder[style*=hidden] {
+//   color: #83b0c1;
+//   font-size: .65em;
+//   font-weight: normal;
+//   top: -20px;
+//   opacity: 1;
+//   visibility: visible !important;
+// }
+// .search__field:-ms-input-placeholder[style*=hidden] {
+//   color: #83b0c1;
+//   font-size: .65em;
+//   font-weight: normal;
+//   top: -20px;
+//   opacity: 1;
+//   visibility: visible !important;
+// }
+#custom-search-input {
+  margin:0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+#custom-search-input .search-query {
+  width:100%;
+  padding-right: 3px;
+  padding-left: 15px;
+      /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 35px;
+}
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: absolute;
+  right:0;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color:#D9230F;
+  cursor: unset;
+  z-index: 2;
+}
+
+.search-query:focus{
+  z-index: 0;   
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RecetteService } from '../common/service/recette.service';
+import { RechercheService } from '../common/service/recherche.service';
 import { AfficherPageService } from '../common/service/afficher-page.service';
 import { Recette } from '../common/data/recette';
 import { Router } from '@angular/router';
@@ -20,18 +21,9 @@ export class RecetteComponent implements OnInit {
   idRecette: string;
 
 
+  constructor( public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) { }
 
-  constructor(public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) { }
-
-  //recuperer ID de recette
-  recupererIdRecette(recette){
-    this.idRecette =recette._id;
-    sessionStorage.setItem("_id", this.idRecette);
-    this._router.navigate(['/pageRecette', this.idRecette]);
-    
-  }
   
-
   ngOnInit(): void {
 
     //Animation sur les portfolio
@@ -44,5 +36,18 @@ export class RecetteComponent implements OnInit {
       error => { console.log(error)}
     )
   }
+
+  //recuperer ID de recette
+  recupererIdRecette(recette){
+    this.idRecette =recette._id;
+    sessionStorage.setItem("_id", this.idRecette);
+    this._router.navigate(['/pageRecette', this.idRecette]);
+    
+  }
+  
+
+ 
+  
+
 
 }

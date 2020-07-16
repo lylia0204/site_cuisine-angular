@@ -13,22 +13,29 @@ export class RecetteCategorieComponent implements OnInit {
 
   recettes : Recette[]
   categorie = sessionStorage.getItem("categorie");
-
-  constructor(public recetteService : RecetteService) { }
+  idRecette: string;
+  
+  constructor(public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) { }
 
 
   ngOnInit(): void { 
-    
     this.recupererRecettesCategorie(this.categorie);
-    console.log("Liste recette de la categorie "+this.categorie)
   }
 
   recupererRecettesCategorie(categorie) {
-    
     this.recetteService.recupererRecetteCategorie(categorie).subscribe(
         data => { this.recettes = data;
         console.log("liste de recette "+JSON.stringify(this.recettes))
         })
   }
+
+  //recuperer ID de recette
+  recupererIdRecette(recette){
+    this.idRecette =recette._id;
+    sessionStorage.setItem("_id", this.idRecette);
+    this._router.navigate(['/pageRecette', this.idRecette]);
+    
+  }
+  
 
 }
