@@ -1,9 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from "rxjs";
 import { AfficherPageService } from '../common/service/afficher-page.service';
 import { Recette } from '../common/data/recette';
 import * as html2pdf from 'html2pdf.js'
 import * as jspdf from 'jspdf'
 import html2canvas from 'html2canvas'
+import { TokenStorageService } from '../auth/token-storage.service';
+import { Router } from '@angular/router';
+import { FavoriteRecipes} from '../auth/favoriterecipes'
+import {FavoriteService} from '../services/fav.service'
 
 
 
@@ -18,14 +23,18 @@ export class PageRecetteComponent implements OnInit {
   rate: number 
   max: number = 5;
   isReadonly: boolean = true;
+  infoUser : any
+  recettefavorite: Observable<FavoriteRecipes>;
   
   id = sessionStorage.getItem("_id");
   
-  constructor(public afficherPageService: AfficherPageService) { }
+  constructor(public afficherPageService: AfficherPageService, public favoriteService : FavoriteService, public tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.recupererRecette(this.id);
+      
   }
+  
   
   recupererRecette(id) {
     this.afficherPageService.recupererRecetteById(id).subscribe(
@@ -63,8 +72,26 @@ export class PageRecetteComponent implements OnInit {
       doc.save("image.pdf")
     })
   }
- 
+  ajoutrecettefavorite(username){
+
+    this.infoUser = {
+      token: this.tokenStorage.getToken(),
+      username: this.tokenStorage.getUsername(),
+      authorities: this.tokenStorage.getAuthorities(),
+
+    }
+        if (this.infoUser) {
+        this.favoriteService.addFavoriteRecipes(username)
+        }
+        else this.router.navigate(['/signin'])
+    
 }
+
+
+
+
+}
+
 
 
 
