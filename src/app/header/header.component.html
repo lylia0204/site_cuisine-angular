@@ -28,18 +28,23 @@
             </div>
           </form> -->
 
-          <div class=" col-8">
-            <div id="custom-search-input">
-                  <div class="input-group">
-                      <input [(ngModel)]="nomRecherche" type="text" class="search-query form-control" placeholder="Trouve ta recette..." />
-                      <!-- <span class="input-group-btn">
+          <div class="row col-8">
+            <div id="custom-search-input" class="col-11">
+              <div class="input-group">
+                <input [(ngModel)]="nomRecherche" type="text" class="search-query form-control"
+                  placeholder="Trouve ta recette..." />
+                <!-- <span class="input-group-btn">
                           <button type="button"  (click)="rechercherParNom()" >
                               <span class="fa fa-search"></span>
                           </button>
                       </span> -->
-                  </div>
-                </div>
-                <button class="btn btn-primary" type="button"  (click)="rechercherParNom()" value="recherch"></button>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <button class="btn btn-primary search-btn" type="button" (click)="rechercherParNom()" value="recherch">
+                <a> <i class="fa fa-search" style="font-size:25px;color:#fff"></i> </a>
+              </button>
+            </div>
           </div>
 
 
@@ -49,8 +54,8 @@
           </li> -->
             <li *ngIf="authority === 'user'" class="nav-item">
               <b><a class="nav-link" routerLink="/user">{{info.username}}</a></b>
-             
-              <button class="btn btn-secondary"routerLink="/acceuil" (click)="logout()">Deconnexion</button>
+
+              <button class="btn btn-secondary" routerLink="/acceuil" (click)="logout()">Deconnexion</button>
             </li>
             <li *ngIf="authority === 'admin'" class="nav-item">
               <a class="nav-link" routerLink="/admin">Espace Admin</a>

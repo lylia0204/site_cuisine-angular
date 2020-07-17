@@ -21,18 +21,19 @@ export class UserComponent implements OnInit {
   errorMessage: string;
   info: any;
   recettefavorite: FavoriteRecipes[];
-  recette: Recette;
-  rate: number
-  max: number = 5;
+  recettes: Recette[] = [];
+
   recipeId: string;
   isReadonly: boolean = true;
 
 
-  constructor(public afficherPageService: AfficherPageService, private router: Router, private userService: UserService, private token: TokenStorageService, public favoriteService: FavoriteService) { }
+  constructor(public afficherPageService: AfficherPageService, private router: Router, private userService: UserService, private token: TokenStorageService, public favoriteService: FavoriteService) {
+  }
 
   ngOnInit() {
-    this.recuperertousfav()
-    //this.recupererfavcompletes()
+    this.recupererListIdFavoris()
+
+
 
     this.userService.getUserBoard().subscribe(
       data => {
@@ -55,45 +56,26 @@ export class UserComponent implements OnInit {
   }
 
 
-  recuperertousfav() {
+  recupererListIdFavoris() {
     let username = this.token.getUsername()
 
-
+    console.log("le user " + username)
     this.favoriteService.getAllFavoriteRecipes(username).subscribe(
       data => {
         this.recettefavorite = data;
-
-        console.log(this.recettefavorite)
-
-
+        this.recupererRecetteParId(data)
       });
+
+
   }
-  // recupererfavcompletes(){
-    
-  //   this.recupererRecetteDeRecfav()
-  //   .subscribe(
-  //       resultat => {
-
-  //           this.recette = resultat;
-  //           console.log(this.recette);
-            
-
-  //       }
-  //   )
-  // }
-
-  // recupererfavcompletes() {
-
-  //    this.recupererRecetteDeRecfav(this.recettefavorite)
-      
-
-  // }
 
 
-  recupererRecetteDeRecfav(recettefavorite: FavoriteRecipes) {
-
-    return this.afficherPageService.recupererRecetteById(recettefavorite.recipeId)
-
+  recupererRecetteParId(recettefavorite: FavoriteRecipes[]) {
+    for (let i = 0; i < recettefavorite.length; i++) {
+      const element = recettefavorite[i];
+      this.afficherPageService.recupererRecetteById(element.recipeId)
+        .subscribe(recette => this.recettes.push(recette))
+    }
   }
 
   logout() {

@@ -1,13 +1,12 @@
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 
 <body>
     <section class="menu_list mt-60 mb-60">
         <div class="container" id="recette-pdf">
-            <div class="row" >
+            <div class="row">
                 <div class="col-xl-12" id="id-section">
-                    <div class="section-title text-center mb-60"> 
+                    <div class="section-title text-center mb-60">
                         <!-- <p>titre</p> -->
                         <h4>{{recette.nomRecette}}</h4>
 
@@ -18,10 +17,10 @@
                           </div> -->
 
 
-                          <div class="card">
-                        <rating [ngModel]="rate" [max]="max" [readonly]="isReadonly" size="50"></rating>
-                                <b>{{recette.note}}</b> 
-                            </div>
+                        <div class="card">
+                            <rating [ngModel]="rate" [max]="max" [readonly]="isReadonly" size="50"></rating>
+                            <b>{{recette.note}}</b>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,40 +64,56 @@
                                     <li>
                                         <p><strong>Portion :</strong>{{recette.portion}} </p>
                                     </li>
+
+
                                 </ul>
+                                <div class="row">
+                                    <div class="offset-1 col-md-2">
+                                        <button class="main-btn">
+                                            <a (click)="telecharger2()"><i class="fa fa-file-pdf-o"
+                                                    style="font-size:30px;color:#fff"></i> </a>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-1"> 
+                                        <button class="main-btn"> <a
+                                                (click)="ajoutrecettefavorite()"><i class="fa fa-heart-o"
+                                                    style="font-size:30px;color:#fff"></i> </a>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-           
+
 
 
             </div>
 
             <div class="tire-tire">
-                
+
             </div>
 
 
             <div class="row" id="recette-temps">
 
-                <div class="col-md-3"><strong>Temps de cuisson :</strong> {{recette.tpsCuisson}}</div>
-                <div class="col-md-3"><strong>Temps de préparation :</strong> {{recette.tpsPreparation}}</div>
-                <div class="col-md-3"><strong>Temps total :</strong>{{recette.tpsTotal}}</div>
-                <div class="col-md-1"> <a class="main-btn mt-25 m4"  (click)="telecharger2()" href="#">print </a></div>
+                <div class="col-md-4"><strong>Temps de cuisson :</strong> {{recette.tpsCuisson}}</div>
+                <div class="col-md-4"><strong>Temps de préparation :</strong> {{recette.tpsPreparation}}</div>
+                <div class="col-md-4"><strong>Temps total :</strong>{{recette.tpsTotal}}</div>
                 <!-- <div class="col-md-1"> <a class="main-btn mt-25 m4" (click)="telecharger()">print </a></div> -->
-                <div class="offset-1 col-md-1"> <a class="main-btn mt-25 m4" (click)="ajoutrecettefavorite()">heart </a></div>
-                 <!-- <div class="col-md-1"> <button (click)="telecharger()">print </button></div> 
+                <!-- <div class="offset-1 col-md-1"> <a class="main-btn mt-25 m4" (click)="ajoutrecettefavorite()">heart </a>
+                </div> -->
+                <!-- <div class="col-md-1"> <button (click)="telecharger()">print </button></div> 
                  -->
-            </div >
+            </div>
             <div class="tire-tire">
-                
+
             </div>
 
 
             <div class="row">
-               
+
                 <div class="tab-content col-xl-12" id="myTabContent">
                     <div class="tab-pane fade active show" id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
                         <div class="row">

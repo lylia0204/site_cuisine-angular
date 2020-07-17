@@ -158,11 +158,11 @@ body {
     font-weight: 800;
     text-align: center;
     border: 1px solid #C90103;
-    padding: 0 30px;
-    line-height: 48px;
+    padding:  15px;
+    line-height: 20px;
     color: #fff;
-    border-radius: 35px;
-    transition: all .8s ease-out 0s;
+    border-radius: 30px;
+    transition: all .2s ease-out 0s;
     background-color: #C90103;
     letter-spacing: 2px;
     //text-transform: uppercase;
@@ -170,9 +170,9 @@ body {
 }
 
 .main-btn:hover{
-	background:rgb(203, 206, 15);
+	background: #fed136;
 	color:#fff;
-	border-color:rgb(203, 206, 15);
+	border-color:#fed136;
     transition: all .8s ease-out 0s;
 	text-decoration:none;
 }
