@@ -72,18 +72,26 @@ export class PageRecetteComponent implements OnInit {
       doc.save("image.pdf")
     })
   }
-  ajoutrecettefavorite(username){
+  ajoutrecettefavorite(){
 
-    this.infoUser = {
-      token: this.tokenStorage.getToken(),
-      username: this.tokenStorage.getUsername(),
-      authorities: this.tokenStorage.getAuthorities(),
+    // this.infoUser = {
+    //   token: this.tokenStorage.getToken(),
+    //   username: this.tokenStorage.getUsername(),
+    //   authorities: this.tokenStorage.getAuthorities(),
 
-    }
-        if (this.infoUser) {
-        this.favoriteService.addFavoriteRecipes(username)
-        }
-        else this.router.navigate(['/signin'])
+    // }
+        //if (this.infoUser) {
+      let username = this.tokenStorage.getUsername()
+      let recipeId =this.recette._id
+        this.favoriteService.addFavoriteRecipesUser(username, recipeId)
+        .subscribe(
+          recettefav => {this.recettefavorite= recettefav},
+          error => { console.log(error)}
+        )
+      console.log("-----------------"+ username)
+        console.log("Username "+ recipeId)
+       // }
+        //else this.router.navigate(['/signin'])
     
 }
 

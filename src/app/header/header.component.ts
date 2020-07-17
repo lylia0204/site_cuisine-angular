@@ -75,6 +75,11 @@ export class HeaderComponent implements OnInit {
     username: this.tokenStorage.getUsername(),
   };
   }
+  logout() {
+    this.tokenStorage.signOut();
+   // this._router.navigate(["/acceuil"])
+    window.location.reload()   
+  }
 
  
   //recuperer les recettes par categorie a partir du header

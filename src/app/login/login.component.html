@@ -11,7 +11,7 @@
 			
       </div>
       <div *ngIf="isLoggedIn; else loggedOut">
-        Vous êtes connecté en tant que {{username}}.
+        <a class="nav-link" routerLink="/user"> Acceder à votre espace </a>
        </div>
       <ng-template #loggedOut>
 			<div class="card-body">
@@ -35,7 +35,7 @@
           </div>
 					
 					<div class="form-group">
-            <button class="btn btn-primary">Login</button>
+            <button class="btn btn-primary">Se connecter</button>
             <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
               Login failed: {{errorMessage}}
             </div>

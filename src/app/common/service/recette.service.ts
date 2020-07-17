@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class RecetteService {
  
-  preUrl = "http://localhost:8887/"
+  preUrl = "http://localhost:8887"
 
   public recupererRecette() : Observable<Recette[]>{
     let url = this.preUrl+"/recette-api/public/recettes";

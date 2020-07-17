@@ -1,7 +1,7 @@
-export interface FavoriteRecipes{
-
-    Id : Number;
-    recipeId : string;
-
+export class FavoriteRecipes{
+constructor(
+   public Id : Number,
+   public recipeId : string
+){}
     
 }

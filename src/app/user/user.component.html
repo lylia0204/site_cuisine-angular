@@ -1,15 +1,16 @@
-<h4>Content from Server</h4>
+<!-- <h4>Content from Server</h4>
 {{board}}
-{{errorMessage}}
+{{errorMessage}}-->
 <div *ngIf="info.token; else loggedOut">
     <h5 class="text-primary">Bienvenu! </h5>
     <p>
-      <strong>Nom utilisateur:</strong> {{info.username}}<br/>
+      <strong>Nom utilisateur:</strong> {{info.username}}<br/> -->
       <!-- <strong>Roles:</strong> {{info.authorities}}<br />
       <strong>Token:</strong> {{info.token}}. -->
-    </p>
-    <button class="btn btn-secondary" (click)="logout()">Deconnexion</button>
+    <!-- </p>
+     <button class="btn btn-secondary" (click)="logout()">Deconnexion</button> -->
   </div>
   
   <ng-template #loggedOut>
   </ng-template>
+  
