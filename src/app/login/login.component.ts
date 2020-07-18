@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUsername(data.username);
         this.tokenStorage.saveAuthorities(data.authorities);
-        //this.router.navigate(['/user'])
+       
         if (this.tokenStorage.getToken()) {
           this.roles = this.tokenStorage.getAuthorities();
           this.roles.every(role => {
@@ -48,8 +48,9 @@ export class LoginComponent implements OnInit {
               
             }
             if (role === 'ROLE_USER')
-            this.router.navigate(['/user']);
             
+            this.router.navigate(['/user']);
+           
         
           });
         }
@@ -68,6 +69,6 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
-    window.location.reload();
+    window.location.assign("/user");
   }
 }

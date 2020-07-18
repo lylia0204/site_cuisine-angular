@@ -2,9 +2,9 @@
 {{board}}
 {{errorMessage}}-->
 <div *ngIf="info.token; else loggedOut">
-    <h5 class="text-primary">Bienvenu! </h5>
-    <p>
-      <strong>Nom utilisateur:</strong> {{info.username}}<br/> -->
+    <!-- <h5 class="text-primary">Bienvenu! </h5> -->
+    <!-- <p> -->
+      <!-- <strong>Nom utilisateur:</strong> {{info.username}}<br/> --> 
       <!-- <strong>Roles:</strong> {{info.authorities}}<br />
       <strong>Token:</strong> {{info.token}}. -->
     <!-- </p>
@@ -17,18 +17,24 @@
   <section class="page-section bg-light" id="portfolio">
     <div class="container col-sm-7">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Les meilleures Recettes</h2>
-            <h3 class="section-subheading text-muted">Réunis pour VOUS !!!</h3>
+            <h2 class="section-heading text-uppercase">Vos recettes favorites!</h2>
+            <h3 class="section-subheading text-muted">Régalez-vous !</h3>
         </div>
+       <div class="text-center" *ngIf="messagevide" > <p> Vous n'avez pas encore de recettes enregistrées. Cliquez <a routerLink= "/recette" > ici </a>pour decouvrir nos recettes</p></div>
         <div class="row">
+            
             <div *ngFor="let recette of recettes" class="col-lg-4 col-sm-5 mb-4" >
                 <div class="portfolio-item">
-                    <a class="portfolio-link" routerLink="/pageRecette"  data-toggle="modal" (click)="recupererIdRecette(recette)">
-                        <div class="portfolio-hover">
+               
+                   
+                   <a class="portfolio-link" routerLink="/pageRecette"  data-toggle="modal" (click)="recupererIdRecette(recette)">
+                         <div class="portfolio-hover" > <!--ngIf ="recette != null"><p>Cliquez <a routerLink= "/recette" >ici </a>pour decouvrir nos recettes </p>  -->
                             <div class="portfolio-hover-content"></div>
                         </div>
                         <img class="img-fluid" [src]="recette.imageRecette" alt="...." />
                     </a>
+                   
+               
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">{{recette.nomRecette}}</div>
                         <div class="portfolio-caption-subheading text-muted">{{recette.note}}</div>

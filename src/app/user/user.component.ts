@@ -27,12 +27,14 @@ export class UserComponent implements OnInit {
   isReadonly: boolean = true;
   //recupe par ID
   idRecette: string;
+  messagevide : boolean;
 
 
   constructor(public afficherPageService : AfficherPageService, private _router:Router, private userService: UserService, private token: TokenStorageService, public favoriteService: FavoriteService) {
   }
 
   ngOnInit() {
+    
     this.recupererListIdFavoris()
 
 
@@ -55,14 +57,14 @@ export class UserComponent implements OnInit {
 
     };
 
-  }
-//   isEmpty(obj) {
-//     for(var key in obj) {
-//         if(obj.hasOwnProperty(key))
-//             return false;
-//     }
-//     return true;
-// }
+   }
+  isEmpty(data) {
+    for(var key in data) {
+        if(data.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
   recupererListIdFavoris() {
     let username = this.token.getUsername()
@@ -71,11 +73,12 @@ export class UserComponent implements OnInit {
     this.favoriteService.getAllFavoriteRecipes(username).subscribe(
       data => {
         this.recettefavorite = data;
-        // if(this.isEmpty(this.favoriteService)){
-        //   console.log("liste viiiide ")
-        // }else{
+        if(this.isEmpty(data)){
+         // console.log("liste viiiide ")
+         this.messagevide = true
+        }else{
           this.recupererRecetteParId(data)
-        // }
+        }
       });
 
 
@@ -102,6 +105,9 @@ export class UserComponent implements OnInit {
     sessionStorage.setItem("_id", this.idRecette);
     this._router.navigate(['/pageRecette', this.idRecette]);
     
+  }
+  reloadPage() {
+    window.location.reload();
   }
   
 }

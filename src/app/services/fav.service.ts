@@ -22,7 +22,7 @@ export class  FavoriteService {
   }
 
   getAllFavoriteRecipes(username): Observable<FavoriteRecipes[]> {
-    return this.http.get<FavoriteRecipes[]>(this.favUrl + "api/user/favoriterecipe/favoriterecipe/findall/"+ username)
+    return this.http.get<FavoriteRecipes[]>(this.favUrl + "api/user/favoriterecipe/findall/"+ username)
   }
 
   getFavoriteMongo(recipeId : String) : Observable<Recette>{
