@@ -53,7 +53,10 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+// css du texte liste vide
+.liste-vide{
+ font-size: x-large;
+}
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
@@ -296,6 +299,7 @@ input[type=checkbox] {
 textarea {
   overflow: auto;
   resize: vertical;
+
 }
 
 fieldset {
