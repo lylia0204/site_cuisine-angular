@@ -24,6 +24,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecetteCategorieComponent } from './recette-categorie/recette-categorie.component';
 import { RecetteRechercheComponent } from './recette-recherche/recette-recherche.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { RecetteRechercheComponent } from './recette-recherche/recette-recherche
     RatingModule.forRoot(),
     FormsModule,
     CollapseModule.forRoot(),
+    PaginationModule.forRoot(),
+    NgxPaginationModule,
     BrowserAnimationsModule
     
   ],

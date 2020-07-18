@@ -14,6 +14,9 @@ export class RecetteCategorieComponent implements OnInit {
   recettes : Recette[]
   categorie = sessionStorage.getItem("categorie");
   idRecette: string;
+
+  //pagination
+  pageActuelle: number = 1;
   
   constructor(public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) { }
 

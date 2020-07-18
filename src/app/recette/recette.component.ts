@@ -3,7 +3,7 @@ import { RecetteService } from '../common/service/recette.service';
 import { RechercheService } from '../common/service/recherche.service';
 import { AfficherPageService } from '../common/service/afficher-page.service';
 import { Recette } from '../common/data/recette';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as AOS from 'aos'
 import { AotSummaryResolver } from '@angular/compiler';
 
@@ -16,13 +16,17 @@ import { AotSummaryResolver } from '@angular/compiler';
 })
 
 export class RecetteComponent implements OnInit {
+  
+
+
+  
+  constructor( public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) {}
 
   recettes: Recette[] 
   idRecette: string;
 
-
-  constructor( public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) { }
-
+  //pagination
+  pageActuelle: number = 1;
   
   ngOnInit(): void {
 
@@ -45,9 +49,11 @@ export class RecetteComponent implements OnInit {
     
   }
   
+  
+}
 
  
   
 
 
-}
+
