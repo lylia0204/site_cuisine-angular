@@ -36,7 +36,8 @@ export class RecetteComponent implements OnInit {
     //recuperer toutes les recettes
     this.recetteService.recupererRecette()
     .subscribe(
-      recette => {this.recettes = recette},
+      recette => {this.recettes = recette,
+      this.randomize(this.recettes)},
       error => { console.log(error)}
     )
   }
@@ -48,6 +49,18 @@ export class RecetteComponent implements OnInit {
     this._router.navigate(['/pageRecette', this.idRecette]);
     
   }
+
+  //melanger les donnee d'un tableau
+  randomize(tab) {
+    var i, j, tmp;
+    for (i = tab.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        tmp = tab[i];
+        tab[i] = tab[j];
+        tab[j] = tmp;
+    }
+    return tab;
+}
   
   
 }

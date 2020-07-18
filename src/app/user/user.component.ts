@@ -27,6 +27,8 @@ export class UserComponent implements OnInit {
   isReadonly: boolean = true;
   //recupe par ID
   idRecette: string;
+  //pagination
+  pageActuelle: number = 1;
 
 
   constructor(public afficherPageService : AfficherPageService, private _router:Router, private userService: UserService, private token: TokenStorageService, public favoriteService: FavoriteService) {

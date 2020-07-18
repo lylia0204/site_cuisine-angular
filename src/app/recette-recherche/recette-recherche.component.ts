@@ -17,6 +17,10 @@ export class RecetteRechercheComponent implements OnInit {
   nomRecherche = sessionStorage.getItem("nom");
   //recupe par ID
   idRecette: string;
+  //pagination
+  pageActuelle: number = 1;
+  //retour recherche vide
+  messageListeVide: boolean;
 
 
   constructor(public rechercheService : RechercheService, public afficherPageService : AfficherPageService, private _router:Router) { }
@@ -32,6 +36,12 @@ export class RecetteRechercheComponent implements OnInit {
   rechercherParNom(nom) {
     this.rechercheService.rechercherParNom(nom).subscribe(
         data => { this.recettes = data;
+           if(this.isEmpty(this.recettes)){
+          console.log("liste viiiide ")
+          this.messageListeVide = true;
+        }else{
+          return this.recettes
+        }
         console.log("liste de recette "+JSON.stringify(this.recettes))
         })
   }
@@ -43,6 +53,12 @@ export class RecetteRechercheComponent implements OnInit {
     this._router.navigate(['/pageRecette', this.idRecette]);
     
   }
-  
+    isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
 }

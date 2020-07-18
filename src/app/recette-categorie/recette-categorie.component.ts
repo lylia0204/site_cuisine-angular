@@ -28,7 +28,8 @@ export class RecetteCategorieComponent implements OnInit {
   recupererRecettesCategorie(categorie) {
     this.recetteService.recupererRecetteCategorie(categorie).subscribe(
         data => { this.recettes = data;
-        console.log("liste de recette "+JSON.stringify(this.recettes))
+        this.randomize(this.recettes)
+        //console.log("liste de recette "+JSON.stringify(this.recettes))
         })
   }
 
@@ -39,6 +40,18 @@ export class RecetteCategorieComponent implements OnInit {
     this._router.navigate(['/pageRecette', this.idRecette]);
     
   }
+
+  //melanger les donnee d'un tableau
+  randomize(tab) {
+    var i, j, tmp;
+    for (i = tab.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        tmp = tab[i];
+        tab[i] = tab[j];
+        tab[j] = tmp;
+    }
+    return tab;
+}
   
 
 }
