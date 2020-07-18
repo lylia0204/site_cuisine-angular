@@ -15,9 +15,11 @@ export class RecetteRechercheComponent implements OnInit {
 
   recettes: Recette[] 
   nomRecherche = sessionStorage.getItem("nom");
+  //recupe par ID
+  idRecette: string;
 
 
-  constructor(public rechercheService : RechercheService,  public afficherPageService : AfficherPageService, private _router:Router) { }
+  constructor(public rechercheService : RechercheService, public afficherPageService : AfficherPageService, private _router:Router) { }
 
   ngOnInit(): void {
      //Animation sur les portfolio
@@ -33,5 +35,14 @@ export class RecetteRechercheComponent implements OnInit {
         console.log("liste de recette "+JSON.stringify(this.recettes))
         })
   }
+
+   //recuperer ID de recette
+   recupererIdRecette(recette){
+    this.idRecette =recette._id;
+    sessionStorage.setItem("_id", this.idRecette);
+    this._router.navigate(['/pageRecette', this.idRecette]);
+    
+  }
+  
 
 }

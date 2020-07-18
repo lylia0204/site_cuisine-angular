@@ -25,9 +25,11 @@ export class UserComponent implements OnInit {
 
   recipeId: string;
   isReadonly: boolean = true;
+  //recupe par ID
+  idRecette: string;
 
 
-  constructor(public afficherPageService: AfficherPageService, private router: Router, private userService: UserService, private token: TokenStorageService, public favoriteService: FavoriteService) {
+  constructor(public afficherPageService : AfficherPageService, private _router:Router, private userService: UserService, private token: TokenStorageService, public favoriteService: FavoriteService) {
   }
 
   ngOnInit() {
@@ -42,7 +44,7 @@ export class UserComponent implements OnInit {
       },
       error => {
         this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
-        this.router.navigate(['/'])
+        this._router.navigate(['/'])
       }
     );
 
@@ -54,7 +56,13 @@ export class UserComponent implements OnInit {
     };
 
   }
-
+//   isEmpty(obj) {
+//     for(var key in obj) {
+//         if(obj.hasOwnProperty(key))
+//             return false;
+//     }
+//     return true;
+// }
 
   recupererListIdFavoris() {
     let username = this.token.getUsername()
@@ -63,7 +71,11 @@ export class UserComponent implements OnInit {
     this.favoriteService.getAllFavoriteRecipes(username).subscribe(
       data => {
         this.recettefavorite = data;
-        this.recupererRecetteParId(data)
+        // if(this.isEmpty(this.favoriteService)){
+        //   console.log("liste viiiide ")
+        // }else{
+          this.recupererRecetteParId(data)
+        // }
       });
 
 
@@ -82,4 +94,14 @@ export class UserComponent implements OnInit {
     this.token.signOut();
     window.location.reload()
   }
+
+
+   //recuperer ID de recette
+   recupererIdRecette(recette){
+    this.idRecette =recette._id;
+    sessionStorage.setItem("_id", this.idRecette);
+    this._router.navigate(['/pageRecette', this.idRecette]);
+    
+  }
+  
 }

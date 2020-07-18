@@ -34,7 +34,7 @@ export class AccueilComponent implements OnInit {
   recupererRecetteParCategorie(categorie:string){
 
     sessionStorage.setItem("categorie", categorie);
-    this._router.navigate(['/recetteCategorie']);
+    this._router.navigate(['/recetteCategorie', categorie]);
     console.log("categorie ===== "+categorie)
  
   }

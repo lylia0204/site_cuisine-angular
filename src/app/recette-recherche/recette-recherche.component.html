@@ -7,7 +7,7 @@
         <div class="row">
             <div *ngFor="let recette of recettes" class="col-lg-4 col-sm-5 mb-4" >
                 <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" (click)="recupererIdRecette(recette)">
+                    <a class="portfolio-link" routerLink="/pageRecette"  data-toggle="modal" (click)="recupererIdRecette(recette)">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"></div>
                         </div>
