@@ -43,11 +43,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // setTimeout(() => {
-      // this._router.navigated = false;
-      // this._router.navigate([this._router.url]);
-      // }, 5000);
-
+    
     //animation du header au moment du scroll
     window.addEventListener("scroll",function(){
       let menuArea = document.getElementById('mainNav');

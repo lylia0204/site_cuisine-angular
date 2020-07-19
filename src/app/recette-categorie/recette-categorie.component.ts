@@ -22,6 +22,7 @@ export class RecetteCategorieComponent implements OnInit {
 
 
   ngOnInit(): void { 
+    //recuperer liste recette par categorie
     this.recupererRecettesCategorie(this.categorie);
   }
 
@@ -29,7 +30,6 @@ export class RecetteCategorieComponent implements OnInit {
     this.recetteService.recupererRecetteCategorie(categorie).subscribe(
         data => { this.recettes = data;
         this.randomize(this.recettes)
-        //console.log("liste de recette "+JSON.stringify(this.recettes))
         })
   }
 
