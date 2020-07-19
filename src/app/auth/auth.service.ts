@@ -15,8 +15,8 @@ const httpOptions = {
 })
 export class AuthService {
 
-  private loginUrl = 'http://localhost:8080/api/auth/signin';
-  private signupUrl = 'http://localhost:8080/api/auth/signup';
+  private loginUrl = 'http://ec2-15-188-89-5.eu-west-3.compute.amazonaws.com:8886/api/auth/signin';
+  private signupUrl = 'http://ec2-15-188-89-5.eu-west-3.compute.amazonaws.com:8886/api/auth/signup';
 
   constructor(private http: HttpClient) {
   }
