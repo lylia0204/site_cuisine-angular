@@ -74,13 +74,7 @@ export class PageRecetteComponent implements OnInit {
   }
   ajoutrecettefavorite(){
 
-    // this.infoUser = {
-    //   token: this.tokenStorage.getToken(),
-    //   username: this.tokenStorage.getUsername(),
-    //   authorities: this.tokenStorage.getAuthorities(),
-
-    // }
-        //if (this.infoUser) {
+    
       let username = this.tokenStorage.getUsername()
       let recipeId =this.recette._id
         this.favoriteService.addFavoriteRecipesUser(username, recipeId)
@@ -90,8 +84,7 @@ export class PageRecetteComponent implements OnInit {
         )
       console.log("-----------------"+ username)
         console.log("Username "+ recipeId)
-       // }
-        //else this.router.navigate(['/signin'])
+       
     
 }
 

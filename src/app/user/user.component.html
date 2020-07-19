@@ -39,6 +39,12 @@
                         <div class="portfolio-caption-heading">{{recette.nomRecette}}</div>
                         <div class="portfolio-caption-subheading text-muted">{{recette.note}}</div>
                     </div>
+                    <div class="col-md-1"> 
+                        <button class="main-btn"> <a
+                                (click)="supprimerRecette(recette)"><i class="fa fa-heart-o"
+                                    style="font-size:25px;color:#fff"></i> </a>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
