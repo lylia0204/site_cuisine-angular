@@ -20,11 +20,15 @@ import { FavoriteService } from '../services/fav.service'
 export class PageRecetteComponent implements OnInit {
 
   recette: Recette
+  // rating recette
   rate: number
   max: number = 5;
+
   isReadonly: boolean = true;
   infoUser: any
   recettefavorite: Observable<FavoriteRecipes>;
+  
+  //traitement données
   preparations: string
   materiels: string
   vrai: boolean;

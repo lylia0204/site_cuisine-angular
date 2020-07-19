@@ -9,8 +9,9 @@ body {
 }
 //text source recette
 .source-recette{
-  margin-top: 40px;;
-
+  font-size: large;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 #recette-temps{
     margin-top: 30px;
@@ -293,6 +294,7 @@ body {
   }
   .recepies_info{
     border: 1px solid  #C90103;
+    padding-top: 3rem;
   }
 
   
