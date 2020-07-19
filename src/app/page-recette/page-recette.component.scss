@@ -7,6 +7,11 @@ body {
 #id-section{
     margin-top: 250px;
 }
+//text source recette
+.source-recette{
+  margin-top: 40px;;
+
+}
 #recette-temps{
     margin-top: 30px;
     padding: 5px;
@@ -64,6 +69,11 @@ body {
     //changee
 	padding-left: 10px;
 	margin-bottom: 110px;
+}
+.conseil-recette{
+  border: 2px solid #C90103;
+  padding: 10px;
+  border-bottom-left-radius: 25px;
 }
 
  
@@ -158,14 +168,15 @@ body {
 }
 .main-btn {
     display: inline-block;
+    margin-top: 50px;
     font-weight: 800;
     text-align: center;
     border: 1px solid #C90103;
-    padding:  10px;
-    line-height: 18px;
+    padding:  8px;
+    line-height: 15px;
     color: #fff;
-    border-radius: 40px;
-    transition: all .2s ease-out 0s;
+    border-radius: 25px;
+    transition: all .0.8s ease-out 0s;
     background-color: #C90103;
     letter-spacing: 2px;
     //text-transform: uppercase;
@@ -279,6 +290,9 @@ body {
   /* line 54, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
   .recepie_details_area .recepies_info .resepies_details ul li p i {
     color: #ffcc00;
+  }
+  .recepies_info{
+    border: 1px solid  #C90103;
   }
 
   

@@ -7,8 +7,8 @@ import * as jspdf from 'jspdf'
 import html2canvas from 'html2canvas'
 import { TokenStorageService } from '../auth/token-storage.service';
 import { Router } from '@angular/router';
-import { FavoriteRecipes} from '../auth/favoriterecipes'
-import {FavoriteService} from '../services/fav.service'
+import { FavoriteRecipes } from '../auth/favoriterecipes'
+import { FavoriteService } from '../services/fav.service'
 
 
 
@@ -19,38 +19,56 @@ import {FavoriteService} from '../services/fav.service'
 })
 export class PageRecetteComponent implements OnInit {
 
-  recette: Recette 
-  rate: number 
+  recette: Recette
+  rate: number
   max: number = 5;
   isReadonly: boolean = true;
-  infoUser : any
+  infoUser: any
   recettefavorite: Observable<FavoriteRecipes>;
-  
+  preparations: string
+  materiels: string
+  vrai: boolean;
+
   id = sessionStorage.getItem("_id");
-  
-  constructor(public afficherPageService: AfficherPageService, public favoriteService : FavoriteService, public tokenStorage: TokenStorageService, private router: Router) { }
+
+  constructor(public afficherPageService: AfficherPageService, public favoriteService: FavoriteService, public tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.recupererRecette(this.id);
-      
+
   }
-  
-  
+
+  isEmpty(obj) {
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key))
+        return false;
+    }
+    return true;
+  }
+
   recupererRecette(id) {
     this.afficherPageService.recupererRecetteById(id).subscribe(
-        data => { this.recette = data;
-        this.rate =parseInt(this.recette.note);
+      data => {
+        this.recette = data;
+        this.materiels = this.recette.materiels;
+
+        if (this.isEmpty(this.materiels)) {
+          this.vrai = true;
+          // console.log("materiel : "+ this.materiels)
+        }
+
+        this.rate = parseInt(this.recette.note);
       })
   }
 
-  telecharger(){
+  telecharger() {
     const options = {
-      name:'output.pdf',
-      image: {type:'jpeg'},
+      name: 'output.pdf',
+      image: { type: 'jpeg' },
       html2canvas: {},
-      jsPDF: {orientation: 'landscape'}
+      jsPDF: { orientation: 'landscape' }
     }
-    const element:Element = document.getElementById('recette-pdf')
+    const element: Element = document.getElementById('recette-pdf')
 
     html2pdf()
       .from(element)
@@ -58,8 +76,8 @@ export class PageRecetteComponent implements OnInit {
       .save()
   }
 
-  telecharger2 (){
-    var element=document.getElementById('recette-pdf')
+  telecharger2() {
+    var element = document.getElementById('recette-pdf')
     html2canvas(element).then((canvas) => {
       console.log(canvas)
 
@@ -72,7 +90,8 @@ export class PageRecetteComponent implements OnInit {
       doc.save("image.pdf")
     })
   }
-  ajoutrecettefavorite(){
+
+  ajoutrecettefavorite() {
 
     // this.infoUser = {
     //   token: this.tokenStorage.getToken(),
@@ -80,22 +99,20 @@ export class PageRecetteComponent implements OnInit {
     //   authorities: this.tokenStorage.getAuthorities(),
 
     // }
-        //if (this.infoUser) {
-      let username = this.tokenStorage.getUsername()
-      let recipeId =this.recette._id
-        this.favoriteService.addFavoriteRecipesUser(username, recipeId)
-        .subscribe(
-          recettefav => {this.recettefavorite= recettefav},
-          error => { console.log(error)}
-        )
-      console.log("-----------------"+ username)
-        console.log("Username "+ recipeId)
-       // }
-        //else this.router.navigate(['/signin'])
-    
-}
+    //if (this.infoUser) {
+    let username = this.tokenStorage.getUsername()
+    let recipeId = this.recette._id
+    this.favoriteService.addFavoriteRecipesUser(username, recipeId)
+      .subscribe(
+        recettefav => { this.recettefavorite = recettefav },
+        error => { console.log(error) }
+      )
+    console.log("-----------------" + username)
+    console.log("Username " + recipeId)
+    // }
+    //else this.router.navigate(['/signin'])
 
-
+  }
 
 
 }
