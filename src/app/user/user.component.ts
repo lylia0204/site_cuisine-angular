@@ -22,6 +22,7 @@ export class UserComponent implements OnInit {
   info: any;
   recettefavorite: FavoriteRecipes[];
   recettes: Recette[] = [];
+  recettedelete : Recette
 
   recipeId: string;
   isReadonly: boolean = true;
@@ -98,12 +99,7 @@ export class UserComponent implements OnInit {
     }
   }
 
-  logout() {
-    this.token.signOut();
-    window.location.reload()
-  }
-
-
+  
    //recuperer ID de recette
    recupererIdRecette(recette){
     this.idRecette =recette._id;
@@ -111,8 +107,21 @@ export class UserComponent implements OnInit {
     this._router.navigate(['/pageRecette', this.idRecette]);
     
   }
-  reloadPage() {
+
+  supprimerRecette(recette){
+    
+    let username = this.token.getUsername()
+    this.idRecette = recette._id;
+    this.favoriteService.deleteFavRecipe(username, this.idRecette).subscribe(
+      data=> console.log(data)) 
+    
+    this.reloadPage();
+     
+  
+}
+  reloadPage(){
     window.location.reload();
   }
+  
   
 }

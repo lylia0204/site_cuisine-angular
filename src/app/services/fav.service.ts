@@ -25,9 +25,9 @@ export class  FavoriteService {
     return this.http.get<FavoriteRecipes[]>(this.favUrl + "api/user/favoriterecipe/findall/"+ username)
   }
 
-  getFavoriteMongo(recipeId : String) : Observable<Recette>{
-    return this.http.get<Recette>(this.favUrl +"api/user/favoriterecipe/" + recipeId)
 
+  deleteFavRecipe(username , recipeId): Observable<any> {
+    return this.http.delete(this.favUrl+ "api/user/favoriterecipe/delete/"+ username +"/"+  recipeId,  {responseType:'text' as 'json'});
   }
 
 
