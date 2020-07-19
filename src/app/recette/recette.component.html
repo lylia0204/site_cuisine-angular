@@ -5,11 +5,11 @@
           <h3 class="section-subheading text-muted">Réunis pour VOUS !!!</h3>
       </div>
       <div class="row">
-          <div *ngFor="let recette of recettes" class="col-lg-4 col-sm-5 mb-4">
+          <div *ngFor="let recette of recettes | paginate: { itemsPerPage: 18, currentPage: pageActuelle }" class="col-lg-4 col-sm-5 mb-4" >
               <div class="portfolio-item">
-                  <a class="portfolio-link" data-toggle="modal" (click)="recupererIdRecette(recette)">
+                  <a class="portfolio-link" routerLink="/pageRecette" data-toggle="modal" (click)="recupererIdRecette(recette)">
                       <div class="portfolio-hover">
-                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                          <div class="portfolio-hover-content"></div>
                       </div>
                       <img class="img-fluid" [src]="recette.imageRecette" alt="...." />
                   </a>
@@ -19,6 +19,9 @@
                   </div>
               </div>
           </div>
-      </div>
+        </div>
+        <pagination-controls (pageChange)="pageActuelle = $event"></pagination-controls>
   </div>
+
+  <!-- <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls> -->
 </section>

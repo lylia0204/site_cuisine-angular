@@ -1,0 +1,28 @@
+<section class="page-section bg-light" id="portfolio">
+    <div class="container col-sm-7">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Les meilleures Recettes</h2>
+            <h3 class="section-subheading text-muted">Réunis pour VOUS !!!</h3>
+        </div>
+        <div class="row">
+            <div class="liste-vide text-center" *ngIf="messageListeVide">
+               <p> Pas de résultat pour :  <b class="text-uppercase">{{nomRecherche}}</b> </p>
+            </div>
+            <div *ngFor="let recette of recettes | paginate: { itemsPerPage: 18, currentPage: pageActuelle }" class="col-lg-4 col-sm-5 mb-4" >
+                <div class="portfolio-item" >
+                    <a class="portfolio-link" routerLink="/pageRecette"  data-toggle="modal" (click)="recupererIdRecette(recette)">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"></div>
+                        </div>
+                        <img class="img-fluid" [src]="recette.imageRecette" alt="...." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">{{recette.nomRecette}}</div>
+                        <div class="portfolio-caption-subheading text-muted">{{recette.note}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="pageActuelle = $event"></pagination-controls>
+    </div>
+  </section>

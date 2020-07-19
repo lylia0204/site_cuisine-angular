@@ -1,9 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RecetteService } from '../common/service/recette.service';
+import { RechercheService } from '../common/service/recherche.service';
 import { AfficherPageService } from '../common/service/afficher-page.service';
 import { Recette } from '../common/data/recette';
-import { Router } from '@angular/router';
-
+import { Router, ActivatedRoute } from '@angular/router';
+import * as AOS from 'aos'
+import { AotSummaryResolver } from '@angular/compiler';
 
 
 
@@ -12,14 +14,35 @@ import { Router } from '@angular/router';
   templateUrl: './recette.component.html',
   styleUrls: ['./recette.component.scss']
 })
+
 export class RecetteComponent implements OnInit {
-recettes: Recette[] 
-idRecette: string;
+  
 
 
+  
+  constructor( public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) {}
 
-  constructor(public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router) { }
+  recettes: Recette[] 
+  idRecette: string;
 
+  //pagination
+  pageActuelle: number = 1;
+  
+  ngOnInit(): void {
+
+    //Animation sur les portfolio
+    AOS.init();
+
+    //recuperer toutes les recettes
+    this.recetteService.recupererRecette()
+    .subscribe(
+      recette => {this.recettes = recette,
+      this.randomize(this.recettes)},
+      error => { console.log(error)}
+    )
+  }
+
+  //recuperer ID de recette
   recupererIdRecette(recette){
     this.idRecette =recette._id;
     sessionStorage.setItem("_id", this.idRecette);
@@ -27,38 +50,23 @@ idRecette: string;
     
   }
 
-  ngOnInit(): void {
-    this.recetteService.recupererRecette()
-    .subscribe(
-      recette => {this.recettes = recette},
-      error => { console.log(error)}
-    )
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // selectEvenement(evenement : Evenement){
-  //   console.log('Vous avez sélectionné ' + evenement.titre);
-  //   let link = ['/evenement', evenement.id];
-  //   this.router.navigate(link);
-  // }
-
+  //melanger les donnee d'un tableau
+  randomize(tab) {
+    var i, j, tmp;
+    for (i = tab.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        tmp = tab[i];
+        tab[i] = tab[j];
+        tab[j] = tmp;
+    }
+    return tab;
 }
+  
+  
+}
+
+ 
+  
+
+
+

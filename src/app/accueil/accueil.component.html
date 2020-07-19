@@ -1,143 +1,174 @@
 <header class="masthead">
-    <div class="container">
-        <div class="masthead-subheading">Bienvenue Parmi Nous!</div>
+    <div class="container " >
+        <div class="masthead-subheading" >Bienvenue Parmi Nous!</div>
         <div class="masthead-heading text-uppercase">Trouver une recette n'a jamais été aussi facile...</div>
         <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
     </div>
 </header>
-<section class="page-section" id="services">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+<section class="page-section bg-light" id="portfolio">
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">NOTRE SELECTION</h2>
+                <h3 class="section-subheading text-muted">A vous de cliquer </h3>
+            </div>
+
+
+            <div class="row text-center">
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('patisserie')" >
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">Pâtisserie</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/patisserie1_cat.jpg"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Pour les plus gourmants</h4>
+                        <p class="text-muted">Si vous aimez le chocolaté le beurré, le crémeux... Vous trouverez certainement votre bonheur avec un seul clic.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('sansOeufs')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">Sans oeufs</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/sans-oeufs1.PNG"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Sans Oeufs</h4>
+                        <p class="text-muted">En cherchant une alternative aux œufs, cette catégorie vous offre un palmarès de recettes pouvant répondre à votre désir et à vos goûts.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('vegetarien')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">Végétarien</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/vegetarien2_cat.jpg"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Vous êtes végétarien ?</h4>
+                        <p class="text-muted">Ral-le-bol des protéines, besoin de vitamines et minéraux, laissez-vous emporter par la magie des veggies...
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('salade')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">Salades</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/salade1_cat.jpg"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Mangez léger</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime
+                            quam
+                            architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('sansGluten')" >
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">Sans gluten</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/sans-gluten1_cat.jpg"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Allergique au Gluten ?</h4>
+                        <p class="text-muted">Si vous êtes allergique au gluten, ou si vous voulez simplement tester des nouveautés, vous trouverez toutes les recettes pour vous satisfaire.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('chocolat')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content" >Chocolat</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/chocolat1_cat.jpg"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Le 8ème péché</h4>
+                        <p class="text-muted">Oyé! Oyé ! Amateurs de chocolat ! Restez comme vous êtes et cliquez ici pour trouver votre mine d'or.</p>
+                    </div>
+                </div>
+
+              
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('gateaux')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content" >Gâteaux</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/gateau1_cat.jpg"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3"><del>Bob</del>...Gâteau éponge</h4>
+                        <p class="text-muted">Du sec au fondant, passant par le moelleux, noir chocolaté ou blanc vanillé, toutes sorte de  recettes de gâteaux vous attendent.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('maghreb')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content" >Maghreb</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/maghreb1_cat.PNG"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Bienvenue au Maghreb</h4>
+                        <p class="text-muted">La cuisine maghrebine vous fascine, les tadjines, couscous, samoussa, bricks... Une panoplie de recettes et méthodes pour vivre votre conte de mille et une nuit.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" class="col-lg-4 col-sm-5 mb-4">
+                    <div class="portfolio-item">
+
+                        <a class="portfolio-link" data-toggle="modal" routerLink="/recetteCategorie" (click)=" recupererRecetteParCategorie('petitDej')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content" >Petit déjeuner</div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image_categorie/petit-dej1_cat.jpg"
+                                alt="...." />
+                        </a>
+                        <h4 class="my-3">Bonjour !</h4>
+                        <p class="text-muted">Pour bien commencer la journée quoi de mieux qu'un bon petit dej bien équilibré, vous y trouverez bien des révélations.</p>
+                    </div>
+                </div>
+
+               
+
+               
+
+            </div>
         </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Responsive Design</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Web Security</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="page-section" id="services">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Responsive Design</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Web Security</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="page-section" id="services">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Responsive Design</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Web Security</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="page-section" id="services">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Responsive Design</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Web Security</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-        </div>
-    </div>
+    </section>
 </section>

@@ -1,35 +1,79 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
-  <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars ml-1"></i>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="row col-lg-12" id="content-navbar">
+
+    <div class="col-sm-12 ">
+      <button type="button" class="navbar-toggler navbar-toggler-left" (click)="isCollapsed = !isCollapsed"
+        data-toggle="collapse" data-target="#navbarResponsive" [attr.aria-expanded]="!isCollapsed"
+        aria-controls="collapseBasic"><i class="fa fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+    </div>
+
+    <div class="collapse navbar-collapse col-sm-3">
+
+      <a class="navbar-brand js-scroll-trigger " href="#page-top"><img
+          src="https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image-logo/le-logo-noir.png" alt=""
+          class="img-responsive" /></a>
+
+    </div>
+
+
+    <div class="col-sm-9 mr-auto">
+      <div class="row">
+        <div class="collapse navbar-collapse col-lg-12" id="collapseBasic" [collapse]="isCollapsed">
+
+          <div class="row col-8">
+            <div id="custom-search-input" class="col-11">
+              <div class="input-group">
+                <input [(ngModel)]="nomRecherche" type="text" class="search-query form-control"
+                  placeholder="Trouve ta recette..." />
+               
+              </div>
+            </div>
+            <div class="ml-auto">
+              <button class="btn btn-primary search-btn" type="button" (click)="rechercherParNom()" value="recherch">
+                <a> <i class="fa fa-search" style="font-size:25px;color:#fff"></i> </a>
+              </button>
+            </div>
+          </div>
+
+
           <ul class="navbar-nav text-uppercase ml-auto">
-              <li class="nav-item"><a class="nav-link" routerLink="/recette">Recettes</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/aperitif">Apéritifs</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/entree">Entrées</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/plat">Plats</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/dessert">Desserts</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/boisson">Boissons</a></li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" routerLink="home">Accueil</a></li>
-              <li *ngIf="authority === 'user'" class="nav-item">
-                <a class="nav-link" routerLink="user">Espace Utilisteur</a>
-              </li>
-              <li *ngIf="authority === 'admin'" class="nav-item">
-                <a class="nav-link" routerLink="/admin">Espace Admin</a>
-              </li>
-              <li *ngIf="!authority" class="nav-item">
-                <a class="nav-link" routerLink='login'>Login</a>
-              </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+            <li *ngIf="authority === 'user'" class="nav-item">
+              <b><a class="nav-link" routerLink="/user">{{info.username}}</a></b>
+
+              <button class="btn btn-secondary" routerLink="/acceuil" (click)="logout()">Deconnexion</button>
+            </li>
+            <li *ngIf="authority === 'admin'" class="nav-item">
+              <a class="nav-link" routerLink="/admin">Espace Admin</a>
+            </li>
+            <li *ngIf="!authority" class="nav-item">
+              <b><a class="nav-link" routerLink='/login'>Se connecter</a></b>
+            </li>
           </ul>
-          
+        </div>
+
+        <div class="collapse navbar-collapse col-lg-12" id="collapseBasic" [collapse]="isCollapsed">
+          <ul class="navbar-nav text-uppercase mr-auto offset-1 ">
+            <li class="nav-item"><b><a class="nav-link" routerLink="/recette">Recettes</a></b></li>
+            <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie"
+                  (click)=" recupererRecetteParCategorie('aperitif')">Apéritifs</a></b></li>
+            <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie"
+                  (click)=" recupererRecetteParCategorie('entree')">Entrées</a></b></li>
+            <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie"
+                  (click)=" recupererRecetteParCategorie('plat')">Plats</a></b></li>
+            <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie"
+                  (click)=" recupererRecetteParCategorie('dessert')">Desserts</a></b></li>
+            <li class="nav-item"><b><a class="nav-link" routerLink="/recetteCategorie"
+                  (click)=" recupererRecetteParCategorie('boisson')">Boissons</a></b></li>
+          </ul>
+
+
+        </div>
+
       </div>
+    </div>
   </div>
 </nav>
-
-  
