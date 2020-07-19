@@ -28,6 +28,7 @@
             <label for="password">Mot de passe</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
               required minlength="6" />
+              
             <div *ngIf="f.submitted && password.invalid">
               <div *ngIf="password.errors.required">Le mot de passe est obligatoire</div>
               <div *ngIf="password.errors.minlength">Le mot de passe doit contenir 5 caractères minimum</div>

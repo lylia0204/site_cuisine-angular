@@ -15,7 +15,7 @@
         </div>
         <div *ngIf="isSignedUp; else signupForm">
           <a class="nav-link" routerLink="/login"> Votre compte est enregistré! 
-            Connectez-vous.</a> 
+              Connectez-vous.</a> 
         </div>
 
 <ng-template #signupForm>
@@ -42,6 +42,11 @@
         <label for="password">Mot de passe</label>
         <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
           required minlength="6" />
+          <label for="password">Confirmer Mot de passe</label>
+        <input type="password" class="form-control" name="password2" [(ngModel)]="password2" #password="ngModel"
+          required minlength="6" />
+          <div *ngIf= "invalidmessage" class="alert alert-warning"> mot de passe differents </div>
+         
         <div *ngIf="f.submitted && password.invalid">
           <div *ngIf="password.errors.required">Mot de passe obligatoire</div>
           <div *ngIf="password.errors.minlength">Mot de passe doit contenir plus de 6 caractère</div>
