@@ -10,7 +10,7 @@ import { FavoriteRecipes } from '../auth/favoriterecipes';
 })
 export class  FavoriteService {
 
-  private favUrl = 'http://localhost:8080/';
+  private favUrl = 'http://ec2-15-188-89-5.eu-west-3.compute.amazonaws.com:8886';
   
   
   constructor(private http: HttpClient) { }
@@ -18,16 +18,16 @@ export class  FavoriteService {
 
 
   addFavoriteRecipesUser(username , recipeId): Observable<any> {
-    return this.http.post(this.favUrl+ "api/user/favoriterecipe/add/"+ username +"/"+  recipeId,  {responseType:'text' as 'json'});
+    return this.http.post(this.favUrl+ "/api/user/favoriterecipe/add/"+ username +"/"+  recipeId,  {responseType:'text' as 'json'});
   }
 
   getAllFavoriteRecipes(username): Observable<FavoriteRecipes[]> {
-    return this.http.get<FavoriteRecipes[]>(this.favUrl + "api/user/favoriterecipe/findall/"+ username)
+    return this.http.get<FavoriteRecipes[]>(this.favUrl + "/api/user/favoriterecipe/findall/"+ username)
   }
 
 
   deleteFavRecipe(username , recipeId): Observable<any> {
-    return this.http.delete(this.favUrl+ "api/user/favoriterecipe/delete/"+ username +"/"+  recipeId,  {responseType:'text' as 'json'});
+    return this.http.delete(this.favUrl+ "/api/user/favoriterecipe/delete/"+ username +"/"+  recipeId,  {responseType:'text' as 'json'});
   }
 
 

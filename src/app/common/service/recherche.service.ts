@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class RechercheService {
 
 
-  preUrl = "http://localhost:8887/"
+  preUrl = "http://ec2-15-188-89-5.eu-west-3.compute.amazonaws.com:8887"
   
   // traitementNomRecherche(nom : string){
   //   let tabNom : string[] = nom.split(' ')

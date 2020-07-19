@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private userUrl = 'http://localhost:8080/api/test/user';
-  private adminUrl = 'http://localhost:8080/api/test/admin';
+  private userUrl = 'http://ec2-15-188-89-5.eu-west-3.compute.amazonaws.com:8886/api/test/user';
+  private adminUrl = 'http://ec2-15-188-89-5.eu-west-3.compute.amazonaws.com:8886/api/test/admin';
   
   constructor(private http: HttpClient) { }
 
