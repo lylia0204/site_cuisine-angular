@@ -45,49 +45,53 @@
                             <div class="resepies_details">
                                 <ul>
                                     <!-- <li> -->
-                                        <p><strong>Recette de {{recette.site}}</strong> </p>
+                                    <p><strong>Recette de {{recette.site}}</strong> </p>
                                     <!-- </li> -->
                                     <!-- <li> -->
-                                        <p><i class="fa fa-euro" style="font-size:20px;color:#C90103"></i><strong>    Budget :</strong> {{recette.budget}} </p>
+                                    <p><i class="fa fa-euro" style="font-size:20px;color:#C90103"></i><strong> Budget
+                                            :</strong> {{recette.budget}} </p>
                                     <!-- </li> -->
                                     <!-- <li> -->
-                                        <p><i class="fa fa-coffee" style="font-size:20px;color:#C90103"></i><strong>    Difficultée :</strong> {{recette.difficulte}} </p>
+                                    <p><i class="fa fa-coffee" style="font-size:20px;color:#C90103"></i><strong>
+                                            Difficultée :</strong> {{recette.difficulte}} </p>
                                     <!-- </li> -->
                                     <!-- <li> -->
-                                        <p><i class="fa fa-pie-chart" style="font-size:20px;color:#C90103"></i><strong>    Portion :</strong> {{recette.portion}} </p>
+                                    <p><i class="fa fa-pie-chart" style="font-size:20px;color:#C90103"></i><strong>
+                                            Portion :</strong> {{recette.portion}} </p>
                                     <!-- </li> -->
 
 
                                 </ul>
-                           
+
                                 <div class="row">
                                     <div class="offset-1 col-md-1">
-                                        <button class="main-btn btn btn-info"
-                                        popover="Télécharger" 
-                                        triggers="mouseenter:mouseleave">
+                                        <button class="main-btn btn btn-info" popover="Télécharger"
+                                            triggers="mouseenter:mouseleave">
                                             <a (click)="telecharger2()"><i class="fa fa-download"
                                                     style="font-size:20px;color:#fff"></i> </a>
-                                                   
-                                        </button>
-                                        
-                                    </div>
-                                    <div class="offset-1 col-md-1"> 
-                                        <button class="main-btn btn btn-info"
-                                        popover=" Favoris" 
-                                        triggers="mouseenter:mouseleave"> <a
-                                                (click)="ajoutrecettefavorite()"><i class="fa fa-heart-o"
-                                                    style="font-size:20px;color:#fff"></i> </a>
-                                        </button>
-                                        <div *ngIf = "message" > 
-                                            <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">ajoutée</alert>
 
-                                            <!-- <span >ajoutée!</span> -->
+                                        </button>
+
+                                    </div>
+                                    <div class="offset-1 col-md-1">
+                                        <div *ngFor="let alert of alerts">
+                                            <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout"
+                                                (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
                                         </div>
-                                        <div *ngIf = "pasconnecter" router = "/login"></div>
-                                        </div>
+                                        <button class="main-btn btn btn-info" popover=" Favoris"
+                                            triggers="mouseenter:mouseleave"> <a (click)="ajoutrecettefavorite()"><i
+                                                class="fa fa-heart-o" style="font-size:20px;color:#fff"></i> </a>
+                                        </button>
+
+
+
+
+
+                                        <div *ngIf="pasconnecter" router="/login"></div>
                                     </div>
                                 </div>
-                                <div class="source-recette offset-1"><b>Pour plus de détails, cliquez <a href="{{recette.source}}">ici</a>.</b></div>
+                                <div class="source-recette offset-1"><b>Pour plus de détails, cliquez <a
+                                            href="{{recette.source}}">ici</a>.</b></div>
                             </div>
 
                         </div>
@@ -105,9 +109,12 @@
 
             <div class="row" id="recette-temps">
 
-                <div class="col-md-4"><i class="fa fa-thermometer" style="font-size:20px;color:#C90103"></i> <strong>   Temps de cuisson :</strong> {{recette.tpsCuisson}}</div>
-                <div class="col-md-4"><i class="fa fa-hourglass-2" style="font-size:20px;color:#C90103"></i><strong>   Temps de préparation :</strong> {{recette.tpsPreparation}}</div>
-                <div class="col-md-4"><i class="fa fa-clock-o" style="font-size:20px;color:#C90103"></i><strong>   Temps total :</strong>{{recette.tpsTotal}}</div>
+                <div class="col-md-4"><i class="fa fa-thermometer" style="font-size:20px;color:#C90103"></i> <strong>
+                        Temps de cuisson :</strong> {{recette.tpsCuisson}}</div>
+                <div class="col-md-4"><i class="fa fa-hourglass-2" style="font-size:20px;color:#C90103"></i><strong>
+                        Temps de préparation :</strong> {{recette.tpsPreparation}}</div>
+                <div class="col-md-4"><i class="fa fa-clock-o" style="font-size:20px;color:#C90103"></i><strong> Temps
+                        total :</strong>{{recette.tpsTotal}}</div>
                 <!-- <div class="col-md-1"> <a class="main-btn mt-25 m4" (click)="telecharger()">print </a></div> -->
                 <!-- <div class="offset-1 col-md-1"> <a class="main-btn mt-25 m4" (click)="ajoutrecettefavorite()">heart </a>
                 </div> -->
@@ -131,9 +138,9 @@
                                     <h4>Ingrédients : </h4>
                                     <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt=""> -->
                                     <div *ngFor="let ingredient of recette.ingredients" class="menu_content">
-                                        
+
                                         <p>{{ingredient}}</p>
-                                   
+
                                     </div>
                                 </div>
 
@@ -147,7 +154,7 @@
                                     <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt=""> -->
                                     <div *ngFor="let etape of recette.etapesPreparation" class="menu_content">
                                         <div *ngIf="etape != '' ">
-                                            
+
                                             <h4>{{etape}} </h4>
                                         </div>
                                     </div>
@@ -159,7 +166,9 @@
                                 <div class="single_menu_list">
                                     <h4>Matériels : </h4>
                                     <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt=""> -->
-                                    <div *ngIf="vrai"> <p>Aucun matériel n'a été précisé pour cette recette.</p></div>
+                                    <div *ngIf="vrai">
+                                        <p>Aucun matériel n'a été précisé pour cette recette.</p>
+                                    </div>
                                     <div *ngFor="let materiel of recette.materiels" class="menu_content">
                                         <p>{{materiel}}</p>
                                     </div>
@@ -179,5 +188,6 @@
                 </div>
             </div>
         </div>
+
     </section>
 </body>
