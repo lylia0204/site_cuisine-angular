@@ -12,6 +12,7 @@ import { RecetteCategorieComponent } from './recette-categorie/recette-categorie
 import { RecetteRechercheComponent } from './recette-recherche/recette-recherche.component';
 
 
+
 const routes: Routes = [ 
   { path: 'accueil', component : AccueilComponent},
   { path: '',  redirectTo: '/accueil',  pathMatch: 'full'},
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'signup',component: RegisterComponent},
   {path: 'home',component: HomeComponent},
- 
+  
 ];
 
 @NgModule({

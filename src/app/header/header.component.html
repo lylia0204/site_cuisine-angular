@@ -42,8 +42,7 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li> -->
             <li *ngIf="authority === 'user'" class="nav-item">
-              <b><a class="nav-link" routerLink="/user">{{info.username}}</a></b>
-
+              <a class="nav-link" routerLink="/user"> Acceder à <br> mon compte <br>{{info.username}}</a>
               <button class="btn btn-secondary" routerLink="/acceuil" (click)="logout()">Deconnexion</button>
             </li>
             <li *ngIf="authority === 'admin'" class="nav-item">

@@ -9,6 +9,7 @@ import { TokenStorageService } from '../auth/token-storage.service';
 import { Router } from '@angular/router';
 import { FavoriteRecipes } from '../auth/favoriterecipes'
 import { FavoriteService } from '../services/fav.service'
+import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
 
 
 
@@ -20,21 +21,22 @@ import { FavoriteService } from '../services/fav.service'
 export class PageRecetteComponent implements OnInit {
 
   recette: Recette
-  // rating recette
   rate: number
   max: number = 5;
-
   isReadonly: boolean = true;
   infoUser: any
   recettefavorite: Observable<FavoriteRecipes>;
-  
-  //traitement données
   preparations: string
   materiels: string
   vrai: boolean;
-
+  message = false
+  pasconnecter = true
   id = sessionStorage.getItem("_id");
-
+  alerts: any[] =[{
+    type: 'success',
+    msg: `Well done! You successfully read this important alert message. (added: ${new Date().toLocaleTimeString()})`,
+    timeout: 5000
+  }];
   constructor(public afficherPageService: AfficherPageService, public favoriteService: FavoriteService, public tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
@@ -96,23 +98,42 @@ export class PageRecetteComponent implements OnInit {
   }
 
   ajoutrecettefavorite() {
-
-    
       let username = this.tokenStorage.getUsername()
       let recipeId =this.recette._id
+      this.alerts
         this.favoriteService.addFavoriteRecipesUser(username, recipeId)
         .subscribe(
-          recettefav => {this.recettefavorite= recettefav},
+          recettefav => {this.recettefavorite= recettefav
+          this.message = true
+          this.pasconnecter = false
+          
+          },
+          
           error => { console.log(error)}
+         
         )
+        this.pasconnecter = true,
       console.log("-----------------"+ username)
         console.log("Username "+ recipeId)
-       
+      
     
+}
+add(): void {
+  this.alerts.push({
+    type: 'info',
+    timeout: 5000
+  });
+}
+
+onClosed(dismissedAlert: AlertComponent): void {
+  this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
 }
 
 
-  
+reloadPage(){
+  window.location.reload();
+}
+
 
 
 }

@@ -29,8 +29,7 @@
         <div *ngIf="f.submitted && username.invalid">
           <div *ngIf="username.errors.required">Champs obligatoire</div>
         </div>
-      </div>
-      <div class="form-group">
+      
         <label for="email">Email</label>
         <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" required email />
         <div *ngIf="f.submitted && email.invalid">
@@ -52,18 +51,16 @@
           popover="Minimum 8 caractères"
           triggers="keypress:focusout" />
           <div *ngIf= "invalidmessage" class="alert alert-warning"> mot de passe differents </div>
-         
         <div *ngIf="f.submitted && password.invalid">
           <div *ngIf="password.errors.required">Mot de passe obligatoire</div>
           <div *ngIf="password.errors.minlength">Mot de passe doit contenir plus de 6 caractère</div>
         </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary">INSCRIPTION</button>
+        <div>
+        <button class="btn btn-lg btn-primary btn-block text-lowercase">INSCRIPTION</button>
         <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
-         Erreur Enregistrement !<br/>{{errorMessage}}
+         Erreur Enregistrement !<br/>{{errorMessage}} </div>
         </div>
-      </div>
+    </div>
     </form>
   
 </div>

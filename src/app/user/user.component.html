@@ -35,16 +35,10 @@
                 <!-- </button> -->
                 <!-- </div> -->
                 <div class="portfolio-item">
-
-
-                    <a class="portfolio-link" routerLink="/pageRecette" data-toggle="modal"
-                        (click)="recupererIdRecette(recette)">
-
-
-                        <div class="portfolio-hover">
-                            <!--ngIf ="recette != null"><p>Cliquez <a routerLink= "/recette" >ici </a>pour decouvrir nos recettes </p>  -->
-
-
+               
+                   
+                   <a class="portfolio-link" routerLink="/pageRecette"  data-toggle="modal" (click)="recupererIdRecette(recette)">
+                         <div class="portfolio-hover" > 
                             <div class="portfolio-hover-content"></div>
                         </div>
                         <img class="img-fluid" [src]="recette.imageRecette" alt="...." />
