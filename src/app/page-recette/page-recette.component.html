@@ -95,20 +95,23 @@
                             </div>
 
                         </div>
+
                     </div>
                 </div>
-
-
-
-            </div>
-
-            <div class="tire-tire">
-
             </div>
 
 
-            <div class="row" id="recette-temps">
 
+        </div>
+
+        <div class="tire-tire">
+
+        </div>
+
+
+        <div class="row" id="recette-temps">
+
+<<<<<<< HEAD
                 <div class="col-md-4"><i class="fa fa-thermometer" style="font-size:20px;color:#C90103"></i> <strong>
                         Temps de cuisson :</strong> {{recette.tpsCuisson}}</div>
                 <div class="col-md-4"><i class="fa fa-hourglass-2" style="font-size:20px;color:#C90103"></i><strong>
@@ -117,23 +120,34 @@
                         total :</strong>{{recette.tpsTotal}}</div>
                 <!-- <div class="col-md-1"> <a class="main-btn mt-25 m4" (click)="telecharger()">print </a></div> -->
                 <!-- <div class="offset-1 col-md-1"> <a class="main-btn mt-25 m4" (click)="ajoutrecettefavorite()">heart </a>
+=======
+            <div class="col-md-4"><i class="fa fa-thermometer" style="font-size:20px;color:#C90103"></i> <strong> Temps
+                    de cuisson :</strong> {{recette.tpsCuisson}}</div>
+            <div class="col-md-4"><i class="fa fa-hourglass-2" style="font-size:20px;color:#C90103"></i><strong> Temps
+                    de préparation :</strong> {{recette.tpsPreparation}}</div>
+            <div class="col-md-4"><i class="fa fa-clock-o" style="font-size:20px;color:#C90103"></i><strong> Temps total
+                    :</strong>{{recette.tpsTotal}}</div>
+            <!-- <div class="col-md-1"> <a class="main-btn mt-25 m4" (click)="telecharger()">print </a></div> -->
+            <!-- <div class="offset-1 col-md-1"> <a class="main-btn mt-25 m4" (click)="ajoutrecettefavorite()">heart </a>
+>>>>>>> 116da23549297ba9d7c58e821056e500fc68d177
                 </div> -->
-                <!-- <div class="col-md-1"> <button (click)="telecharger()">print </button></div> 
+            <!-- <div class="col-md-1"> <button (click)="telecharger()">print </button></div> 
                  -->
-            </div>
-            <div class="tire-tire">
+        </div>
+        <div class="tire-tire">
 
-            </div>
+        </div>
 
 
-            <div class="row">
+        <div class="row">
 
-                <div class="tab-content col-xl-12" id="myTabContent">
-                    <div class="tab-pane fade active show" id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
-                        <div class="row">
+            <div class="tab-content col-xl-12" id="myTabContent">
+                <div class="tab-pane fade active show" id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
+                    <div class="row">
 
-                            <div class="col-md-3">
+                        <div class="col-md-3">
 
+<<<<<<< HEAD
                                 <div class="single_menu_list">
                                     <h4>Ingrédients : </h4>
                                     <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt=""> -->
@@ -143,12 +157,20 @@
 
                                     </div>
                                 </div>
+=======
+                            <div class="single_menu_list">
+                                <h4>Ingrédients : </h4>
+                                <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt=""> -->
+                                <div *ngFor="let ingredient of recette.ingredients" class="menu_content">
+>>>>>>> 116da23549297ba9d7c58e821056e500fc68d177
 
+                                    <p>{{ingredient}}</p>
 
+                                </div>
                             </div>
 
-                            <div class="col-md-6">
 
+<<<<<<< HEAD
                                 <div class="single_menu_list">
                                     <h4>Préparation : </h4>
                                     <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt=""> -->
@@ -171,23 +193,54 @@
                                     </div>
                                     <div *ngFor="let materiel of recette.materiels" class="menu_content">
                                         <p>{{materiel}}</p>
+=======
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="single_menu_list">
+                                <h4>Préparation : </h4>
+                                <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-1.jpg" alt=""> -->
+                                <div *ngFor="let etape of recette.etapesPreparation" class="menu_content">
+                                    <div *ngIf="etape != '' ">
+
+                                        <h4>{{etape}} </h4>
+>>>>>>> 116da23549297ba9d7c58e821056e500fc68d177
                                     </div>
                                 </div>
-
-
                             </div>
+
+                        </div>
+                        <div class="col-md-3">
+
+                            <div class="single_menu_list">
+                                <h4>Matériels : </h4>
+                                <!-- <img src="http://infinityflamesoft.com/html/restarunt-preview/assets/img/menu/menu-3.jpg" alt=""> -->
+                                <div *ngIf="vrai">
+                                    <p>Aucun matériel n'a été précisé pour cette recette.</p>
+                                </div>
+                                <div *ngFor="let materiel of recette.materiels" class="menu_content">
+                                    <p>{{materiel}}</p>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xl-12 text-center">
-                    <div class="box_btn conseil-recette">
-                        <h4>"{{recette.conseil}}"</h4>
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 text-center">
+                <div class="box_btn conseil-recette">
+                    <h4>"{{recette.conseil}}"</h4>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+        </div>
+>>>>>>> 116da23549297ba9d7c58e821056e500fc68d177
     </section>
 </body>

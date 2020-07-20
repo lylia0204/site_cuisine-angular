@@ -115,42 +115,33 @@ export class PageRecetteComponent implements OnInit {
 
   //methode ajout aux favoris
   ajoutrecettefavorite() {
-    let username = this.tokenStorage.getUsername()
-    let recipeId = this.recette._id
-    this.add()
+      let username = this.tokenStorage.getUsername()
+      let token = this.tokenStorage.getToken
+      let recipeId =this.recette._id
+      if(token){
+        this.favoriteService.addFavoriteRecipesUser(username, recipeId)
+        .subscribe(
+          recettefav => {this.recettefavorite= recettefav
+          
+          },
+          
+          error => { console.log(error) 
+                      this.router.navigate(['/login'])}
+         
+        )
+        this.pasconnecter = true,
+      console.log("-----------------"+ username)
+        console.log("Username "+ recipeId)
+      
+        } 
+}
+add(): void {
+  this.alerts.push({
+    type: 'info',
+    timeout: 5000
+  });
+}
 
-
-    if (!username){
-      this.pasconnecter = true
-     
-
-    }else{
-      this.favoriteService.addFavoriteRecipesUser(username, recipeId)
-      .subscribe(
-        recettefav => {this.recettefavorite= recettefav
-       this.message = true
-       this.pasconnecter = false
-        
-        },
-        
-        error => { console.log(error)}
-       
-      )
-     
-    }
-
-
-  }
-
-
-
-  //methode alert 
-  add(): void {
-    this.alerts.push({
-      type: 'info',
-      timeout: 5000
-    });
-  }
 
   onClosed(dismissedAlert: AlertComponent): void {
     this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
