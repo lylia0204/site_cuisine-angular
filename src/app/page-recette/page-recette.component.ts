@@ -99,24 +99,24 @@ export class PageRecetteComponent implements OnInit {
 
   ajoutrecettefavorite() {
       let username = this.tokenStorage.getUsername()
+      let token = this.tokenStorage.getToken
       let recipeId =this.recette._id
-      this.alerts
+      if(token){
         this.favoriteService.addFavoriteRecipesUser(username, recipeId)
         .subscribe(
           recettefav => {this.recettefavorite= recettefav
-          this.message = true
-          this.pasconnecter = false
           
           },
           
-          error => { console.log(error)}
+          error => { console.log(error) 
+                      this.router.navigate(['/login'])}
          
         )
         this.pasconnecter = true,
       console.log("-----------------"+ username)
         console.log("Username "+ recipeId)
       
-    
+        } 
 }
 add(): void {
   this.alerts.push({

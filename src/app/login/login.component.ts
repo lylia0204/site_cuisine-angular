@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
 
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
-      this.form.password);
-
+      this.form.password);!
+    // connexion et redirection des user (admin utilisé après inscription manuelle par les modérateurs ( Hanane ou Lylia :-))
     this.authService.attemptAuth(this.loginInfo).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
