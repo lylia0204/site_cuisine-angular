@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecetteCategorieComponent } from './recette-categorie/recette-categorie.component';
 import { RecetteRechercheComponent } from './recette-recherche/recette-recherche.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
@@ -51,6 +52,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     CollapseModule.forRoot(),
     PaginationModule.forRoot(),
+    PopoverModule.forRoot(),
     NgxPaginationModule,
     BrowserAnimationsModule
     

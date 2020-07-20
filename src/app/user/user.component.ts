@@ -41,6 +41,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     
+    //get liste favoris
     this.recupererListIdFavoris()
 
 
@@ -72,6 +73,7 @@ export class UserComponent implements OnInit {
     return true;
 }
 
+
   recupererListIdFavoris() {
     let username = this.token.getUsername()
 
@@ -80,7 +82,6 @@ export class UserComponent implements OnInit {
       data => {
         this.recettefavorite = data;
         if(this.isEmpty(data)){
-         // console.log("liste viiiide ")
          this.messagevide = true
         }else{
           this.recupererRecetteParId(data)
@@ -89,7 +90,6 @@ export class UserComponent implements OnInit {
 
 
   }
-
 
   recupererRecetteParId(recettefavorite: FavoriteRecipes[]) {
     for (let i = 0; i < recettefavorite.length; i++) {
@@ -107,6 +107,10 @@ export class UserComponent implements OnInit {
     this._router.navigate(['/pageRecette', this.idRecette]);
     
   }
+
+
+
+
 
   supprimerRecette(recette){
     

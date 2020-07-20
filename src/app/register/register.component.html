@@ -41,10 +41,16 @@
       <div class="form-group">
         <label for="password">Mot de passe</label>
         <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
-          required minlength="6" />
+          required minlength="8"   placement="right"
+          popover="Minimum 8 caractères"
+          triggers="keypress:focusout" />
+
+
           <label for="password">Confirmer Mot de passe</label>
         <input type="password" class="form-control" name="password2" [(ngModel)]="password2" #password="ngModel"
-          required minlength="6" />
+          required minlength="8"  placement="right"
+          popover="Minimum 8 caractères"
+          triggers="keypress:focusout" />
           <div *ngIf= "invalidmessage" class="alert alert-warning"> mot de passe differents </div>
          
         <div *ngIf="f.submitted && password.invalid">

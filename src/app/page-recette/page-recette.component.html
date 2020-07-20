@@ -59,21 +59,27 @@
 
 
                                 </ul>
+                           
                                 <div class="row">
                                     <div class="offset-1 col-md-1">
-                                        <button class="main-btn">
+                                        <button class="main-btn btn btn-info"
+                                        popover="Télécharger" 
+                                        triggers="mouseenter:mouseleave">
                                             <a (click)="telecharger2()"><i class="fa fa-download"
                                                     style="font-size:20px;color:#fff"></i> </a>
+                                                   
                                         </button>
                                     </div>
                                     <div class="offset-1 col-md-1"> 
-                                        <button class="main-btn"> <a
+                                        <button class="main-btn btn btn-info"
+                                        popover=" Favoris" 
+                                        triggers="mouseenter:mouseleave"> <a
                                                 (click)="ajoutrecettefavorite()"><i class="fa fa-heart-o"
                                                     style="font-size:20px;color:#fff"></i> </a>
                                         </button>
                                     </div>
                                 </div>
-                                <div class="source-recette offset-1"><b>Pour regarder la vidéo, cliquez <a href="{{recette.source}}">ici</a>.</b></div>
+                                <div class="source-recette offset-1"><b>Pour plus de détails, cliquez <a href="{{recette.source}}">ici</a>.</b></div>
                             </div>
 
                         </div>
