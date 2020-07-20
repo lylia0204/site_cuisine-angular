@@ -65,14 +65,22 @@
                                             <a (click)="telecharger2()"><i class="fa fa-file-pdf-o"
                                                     style="font-size:20px;color:#fff"></i> </a>
                                         </button>
+                                        
                                     </div>
                                     <div class="offset-1 col-md-1"> 
                                         <button class="main-btn"> <a
                                                 (click)="ajoutrecettefavorite()"><i class="fa fa-heart-o"
                                                     style="font-size:20px;color:#fff"></i> </a>
                                         </button>
+                                        <div *ngIf = "message" > 
+                                            <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">ajoutée</alert>
+
+                                            <!-- <span >ajoutée!</span> -->
+                                        </div>
+                                        <div *ngIf = "pasconnecter" router = "/login"></div>
+                                        </div>
                                     </div>
-                                </div>
+                                
                                 <div class="source-recette offset-1">Pour regarder la vidéo, cliquez <a href="{{recette.source}}">ici</a>.</div>
                             </div>
 

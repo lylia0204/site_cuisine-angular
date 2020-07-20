@@ -50,8 +50,7 @@ export class LoginComponent implements OnInit {
             if (role === 'ROLE_USER')
             
             this.router.navigate(['/user']);
-           
-        
+         
           });
         }
 
@@ -71,4 +70,5 @@ export class LoginComponent implements OnInit {
   reloadPage() {
     window.location.assign("/user");
   }
+  
 }

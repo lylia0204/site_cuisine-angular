@@ -26,6 +26,8 @@ import { RecetteCategorieComponent } from './recette-categorie/recette-categorie
 import { RecetteRechercheComponent } from './recette-recherche/recette-recherche.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AdminComponent,
     HomeComponent,
     RecetteCategorieComponent,
-    RecetteRechercheComponent
+    RecetteRechercheComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CollapseModule.forRoot(),
     PaginationModule.forRoot(),
     NgxPaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AlertModule
     
   ],
   providers: [httpInterceptorProviders],

@@ -74,7 +74,6 @@ export class UserComponent implements OnInit {
 
   recupererListIdFavoris() {
     let username = this.token.getUsername()
-
     console.log("le user " + username)
     this.favoriteService.getAllFavoriteRecipes(username).subscribe(
       data => {
@@ -109,12 +108,11 @@ export class UserComponent implements OnInit {
   }
 
   supprimerRecette(recette){
-    
     let username = this.token.getUsername()
     this.idRecette = recette._id;
     this.favoriteService.deleteFavRecipe(username, this.idRecette).subscribe(
       data=> console.log(data)) 
-    
+
     this.reloadPage();
      
   
