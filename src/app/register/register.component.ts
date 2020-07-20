@@ -42,6 +42,8 @@ export class RegisterComponent implements OnInit {
           this.isSignedUp = true;
           this.isSignUpFailed = false;
           this.invalidmessage =false;
+          this.router.navigate(['/login']);
+         
         },
         
         error => {
@@ -55,6 +57,6 @@ export class RegisterComponent implements OnInit {
      
     } else this.invalidmessage =true;
   }
-
+  
 }
 

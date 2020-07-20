@@ -53,7 +53,7 @@ export class UserComponent implements OnInit {
       },
       error => {
         this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
-        this._router.navigate(['/'])
+       // this._router.navigate(['/'])
       }
     );
 
