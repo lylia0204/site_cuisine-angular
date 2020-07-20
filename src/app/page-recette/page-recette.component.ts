@@ -100,7 +100,7 @@ export class PageRecetteComponent implements OnInit {
   ajoutrecettefavorite() {
       let username = this.tokenStorage.getUsername()
       let recipeId =this.recette._id
-      this.alerts.map
+      this.alerts
         this.favoriteService.addFavoriteRecipesUser(username, recipeId)
         .subscribe(
           recettefav => {this.recettefavorite= recettefav

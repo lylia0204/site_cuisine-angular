@@ -48,13 +48,13 @@
                                         <p><strong>Recette de {{recette.site}}</strong> </p>
                                     <!-- </li> -->
                                     <!-- <li> -->
-                                        <p><i class="fa fa-euro" style="font-size:20px;color:#C90103"></i><strong>    Budget :</strong>{{recette.budget}} </p>
+                                        <p><i class="fa fa-euro" style="font-size:20px;color:#C90103"></i><strong>    Budget :</strong> {{recette.budget}} </p>
                                     <!-- </li> -->
                                     <!-- <li> -->
-                                        <p><i class="fa fa-coffee" style="font-size:20px;color:#C90103"></i><strong>    Difficultée :</strong>{{recette.tpsTotal}} </p>
+                                        <p><i class="fa fa-coffee" style="font-size:20px;color:#C90103"></i><strong>    Difficultée :</strong> {{recette.difficulte}} </p>
                                     <!-- </li> -->
                                     <!-- <li> -->
-                                        <p><i class="fa fa-pie-chart" style="font-size:20px;color:#C90103"></i><strong>    Portion :</strong>{{recette.portion}} </p>
+                                        <p><i class="fa fa-pie-chart" style="font-size:20px;color:#C90103"></i><strong>    Portion :</strong> {{recette.portion}} </p>
                                     <!-- </li> -->
 
 
@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <div class="offset-1 col-md-1">
                                         <button class="main-btn">
-                                            <a (click)="telecharger2()"><i class="fa fa-file-pdf-o"
+                                            <a (click)="telecharger2()"><i class="fa fa-download"
                                                     style="font-size:20px;color:#fff"></i> </a>
                                         </button>
                                         
@@ -80,8 +80,8 @@
                                         <div *ngIf = "pasconnecter" router = "/login"></div>
                                         </div>
                                     </div>
-                                
-                                <div class="source-recette offset-1">Pour regarder la vidéo, cliquez <a href="{{recette.source}}">ici</a>.</div>
+                                </div>
+                                <div class="source-recette offset-1"><b>Pour regarder la vidéo, cliquez <a href="{{recette.source}}">ici</a>.</b></div>
                             </div>
 
                         </div>
