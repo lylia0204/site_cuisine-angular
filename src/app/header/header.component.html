@@ -2,7 +2,7 @@
   <div class="row col-lg-12" id="content-navbar">
 
     <div class="col-sm-12 ">
-      <button type="button" class="navbar-toggler navbar-toggler-left" (click)="isCollapsed = !isCollapsed"
+      <button type="button" class="navbar-toggler navbar-toggler-right"(click)="isCollapsed = !isCollapsed"
         data-toggle="collapse" data-target="#navbarResponsive" [attr.aria-expanded]="!isCollapsed"
         aria-controls="collapseBasic"><i class="fa fa-bars"></i>
       </button>
@@ -19,10 +19,10 @@
 
     <div class="col-sm-9 mr-auto">
       <div class="row">
-        <div class="collapse navbar-collapse col-lg-12" id="collapseBasic" [collapse]="isCollapsed">
+        <div class="collapse navbar-collapse col-sm-12" id="collapseBasic" [collapse]="isCollapsed">
 
           <div class="row col-8">
-            <div id="custom-search-input" class="col-11">
+            <div id="custom-search-input" class="col-sm-11">
               <div class="input-group">
                 <input [(ngModel)]="nomRecherche" type="text" class="search-query form-control"
                   placeholder="Trouve ta recette..." />
@@ -38,19 +38,35 @@
 
 
           <ul class="navbar-nav text-uppercase ml-auto">
-            <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> -->
-            <li *ngIf="authority === 'user'" class="nav-item">
-              <a class="nav-link" routerLink="/user"> Acceder à <br> mon compte <br>{{info.username}}</a>
-              <button class="btn btn-secondary" routerLink="/acceuil" (click)="logout()">Deconnexion</button>
-            </li>
-            <li *ngIf="authority === 'admin'" class="nav-item">
-              <a class="nav-link" routerLink="/admin">Espace Admin</a>
-            </li>
+         
+
+            <div  *ngIf="authority === 'user'" class="btn-group" dropdown placement="bottom right">
+              <button  type="button"  style="color: transparent;align-content: center;"
+              routerLink="/user"   class="btn btn-primary ">
+                      <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size:35px;color:#fff"></i>   
+              </button>
+              <button id="button-alignment" dropdownToggle type="button" 
+                      class="btn btn-primary dropdown-toggle" aria-controls="dropdown-alignment">
+                            {{info.username}} <span class="caret"></span>
+              </button>
+              <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+                  role="menu" aria-labelledby="button-alignment">
+                <li role="menuitem"><a class="dropdown-item" routerLink="/user" >Mes recettes favorites</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Mon profil culinaire</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Mes coordonnées</a></li>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><a class="dropdown-item" routerLink="/" (click)="logout()">Déconnexion</a></li>
+              </ul>
+            </div>
+
             <li *ngIf="!authority" class="nav-item">
               <b><a class="nav-link" routerLink='/login'>Se connecter</a></b>
             </li>
+
+            <li *ngIf="authority === 'admin'" class="nav-item">
+              <a class="nav-link" routerLink="/admin">Espace Admin</a>
+            </li>
+            
           </ul>
         </div>
 
