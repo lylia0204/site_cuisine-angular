@@ -41,6 +41,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     
+    //get liste favoris
     this.recupererListIdFavoris()
 
 
@@ -52,7 +53,7 @@ export class UserComponent implements OnInit {
       },
       error => {
         this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
-        this._router.navigate(['/'])
+       // this._router.navigate(['/'])
       }
     );
 
@@ -72,15 +73,14 @@ export class UserComponent implements OnInit {
     return true;
 }
 
+
   recupererListIdFavoris() {
     let username = this.token.getUsername()
-
     console.log("le user " + username)
     this.favoriteService.getAllFavoriteRecipes(username).subscribe(
       data => {
         this.recettefavorite = data;
         if(this.isEmpty(data)){
-         // console.log("liste viiiide ")
          this.messagevide = true
         }else{
           this.recupererRecetteParId(data)
@@ -89,7 +89,6 @@ export class UserComponent implements OnInit {
 
 
   }
-
 
   recupererRecetteParId(recettefavorite: FavoriteRecipes[]) {
     for (let i = 0; i < recettefavorite.length; i++) {
@@ -108,13 +107,16 @@ export class UserComponent implements OnInit {
     
   }
 
+
+
+
+
   supprimerRecette(recette){
-    
     let username = this.token.getUsername()
     this.idRecette = recette._id;
     this.favoriteService.deleteFavRecipe(username, this.idRecette).subscribe(
       data=> console.log(data)) 
-    
+
     this.reloadPage();
      
   

@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
       }
   })
   
-
+  // pour la connection et la deconnection du user
   if (this.tokenStorage.getToken()) {
     this.roles = this.tokenStorage.getAuthorities();
     this.roles.every(role => {
@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit {
   }
   logout() {
     this.tokenStorage.signOut();
-   // this._router.navigate(["/acceuil"])
+   this._router.navigate(["/acceuil"])
     window.location.reload()   
   }
 

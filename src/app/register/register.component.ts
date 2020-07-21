@@ -16,7 +16,6 @@ export class RegisterComponent implements OnInit {
   isSignedUp = false;
   isSignUpFailed = false;
   errorMessage = '';
-  validmessage = false;
   invalidmessage =false;
   password2 :string;
 
@@ -31,7 +30,7 @@ export class RegisterComponent implements OnInit {
       this.form.username,
       this.form.email,
       this.form.password)
-     // this.form.password2);
+    
     this.confirmermotdepasse(this.form.password, this.password2)
     
   }
@@ -43,19 +42,21 @@ export class RegisterComponent implements OnInit {
           this.isSignedUp = true;
           this.isSignUpFailed = false;
           this.invalidmessage =false;
+          this.router.navigate(['/login']);
+         
         },
         
         error => {
           console.log(error);
           this.errorMessage = error.error.message;
           this.isSignUpFailed = true;
-          // this.validmessage = false;
+          
           
         }
       );
      
     } else this.invalidmessage =true;
   }
-
+  
 }
 

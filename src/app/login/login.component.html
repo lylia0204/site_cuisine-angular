@@ -4,49 +4,51 @@
 </head> 
 <section class="page-section"> 
 <div class="container">
-	<div class="d-flex justify-content-center h-100">
+  <h1><a href="/" rel="header" class="c-header__logo u-block u-margin-auto"></a></h1>
+    <div class="d-flex justify-content-center h-100">
 		<div class="card">
-			<div class="card-header">
+			<!-- <div class="card-header">
 				<h3>Connexion</h3>
 			
-      </div>
+      </div> -->
       <div *ngIf="isLoggedIn; else loggedOut">
-         <!-- <a class="nav-link" routerLink="/user"> Acceder à votre espace </a> -->
+       
        </div>
       <ng-template #loggedOut>
 			<div class="card-body">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
 				<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <div class="form-group">
-            <label for="username">Nom utilisateur</label>
+            <label for="username" style="color: black" >Nom utilisateur</label>
             <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
               required />
             <div *ngIf="f.submitted && username.invalid">
-              <div *ngIf="username.errors.required">Nom d'utilisateur est obligatoire</div>
+              <div *ngIf="username.errors.required" class= "alert-danger"> Nom d'utilisateur est obligatoire</div>
             </div>
           </div>
           <div class="form-group">
             <label for="password">Mot de passe</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
               required minlength="6" />
-              
+             
             <div *ngIf="f.submitted && password.invalid">
-              <div *ngIf="password.errors.required">Le mot de passe est obligatoire</div>
-              <div *ngIf="password.errors.minlength">Le mot de passe doit contenir 5 caractères minimum</div>
+              <div *ngIf="password.errors.required" class= "alert-danger">Le mot de passe est obligatoire</div>
+              <div *ngIf="password.errors.minlength" class= "alert-danger"> attention 8 caractères minimum</div>
             </div>
           </div>
+					<br>
 					
-					<div class="form-group">
            
-            <button class="btn btn-primary">Se connecter</button>
-            
+            <button class="btn btn-lg btn-primary btn-block btn-signin">Se connecter</button>
+            <div class="d-flex justify-content-center links"  >  <a href="/signup" class="forgot-password">Mot de passe oublié?</a> </div>
             <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
-              Login failed: {{errorMessage}}
+              Erreur : login et/ou mot de passe faux.
             </div>
-          </div>
-        
+         <br>
+         <br>
           <div class="d-flex justify-content-center links">
-          <p>Pas encore de compte?</p>
-          <a href="signup" >Enregistrez-vous</a>
+          <p>pas de compte?<a href="signup" >s'enregistrer</a></p>
+          
         </div>
         </form>
       </div>

@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
 
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
-      this.form.password);
-
+      this.form.password);!
+    // connexion et redirection des user (admin utilisé après inscription manuelle par les modérateurs ( Hanane ou Lylia :-))
     this.authService.attemptAuth(this.loginInfo).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
@@ -50,8 +50,7 @@ export class LoginComponent implements OnInit {
             if (role === 'ROLE_USER')
             
             this.router.navigate(['/user']);
-           
-        
+         
           });
         }
 
@@ -71,4 +70,5 @@ export class LoginComponent implements OnInit {
   reloadPage() {
     window.location.assign("/user");
   }
+  
 }

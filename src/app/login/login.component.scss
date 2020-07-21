@@ -11,20 +11,76 @@ font-family: 'Numans', sans-serif;
 }
 
 
-.card{
-height: 370px;
-margin-top: 400px;
-margin-bottom: 200px;
-width: 400px;
-background-color: rgba(0, 0, 0, 0.5) !important;
+// .card{
+// height: 370px;
+// margin-top: 400px;
+// margin-bottom: 200px;
+// width: 400px;
+// border-radius: 1rem;
+// background-color: #F7F7F7 !important;
+
+//}
+.card {
+    background-color: rgba(172, 170, 170, 0.5) !important;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 280px;
+    margin-bottom: 200px;
+    width: 400px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.c-header__logo{
+    src: "https://lylemi-projet-al04.s3.eu-west-3.amazonaws.com/image-logo/le-logo-noir.png"
 }
 
-
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: rgb(104, 145, 162);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+    border-radius: 24px;
+}
 
 .card-header h3{
-color: white;
+color: blue;
 }
 
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
 
 
 .input-group-prepend span{
@@ -64,9 +120,89 @@ background-color: white;
 }
 
 .links{
-color: white;
+color: grey;
+
 }
 
 .links a{
 margin-left: 4px;
 }
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px 16px;
+  }
+    
+  .btn-lg {
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active,
+  .btn-primary.active,
+  .open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #3276b1;
+    border-color: #285e8e;
+  }
+  
+  /***********************
+    ROUND BUTTONS
+  ************************/
+  .round {
+    border-radius: 24px;
+  }
+  
+  /***********************
+    CUSTON BTN VALUES
+  ************************/
+  
+  .btn {
+      padding: 14px 24px;
+      border: 0 none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+      position: relative;
+  }
+  .btn:focus, .btn:active:focus, .btn.active:focus {
+      outline: 0 none;
+  }
+  
+  .btn-primary {
+      background: #0099cc;
+      color: #ffffff;
+  }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+      background: #33a6cc;
+  }
+  .btn-primary:active, .btn-primary.active {
+      background: #007299;
+      box-shadow: none;
+  }
+  

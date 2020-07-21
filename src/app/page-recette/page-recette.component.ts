@@ -9,6 +9,7 @@ import { TokenStorageService } from '../auth/token-storage.service';
 import { Router } from '@angular/router';
 import { FavoriteRecipes } from '../auth/favoriterecipes'
 import { FavoriteService } from '../services/fav.service'
+import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
 
 
 
@@ -18,22 +19,34 @@ import { FavoriteService } from '../services/fav.service'
   styleUrls: ['./page-recette.component.scss']
 })
 export class PageRecetteComponent implements OnInit {
-
+//recette affichee
   recette: Recette
-  // rating recette
+  id = sessionStorage.getItem("_id");
+
+  //pour afficher note de la recette
   rate: number
   max: number = 5;
 
+  //
   isReadonly: boolean = true;
   infoUser: any
   recettefavorite: Observable<FavoriteRecipes>;
-  
-  //traitement données
+
+  //corriger les les erreur du scraping
   preparations: string
   materiels: string
   vrai: boolean;
 
-  id = sessionStorage.getItem("_id");
+  //
+  message = false
+  pasconnecter = false
+
+  //gestion Alert
+  alerts: any[] = [{
+    type: 'success',
+    msg: `Well done! You successfully read this important alert message. (added: ${new Date().toLocaleTimeString()})`,
+    timeout: 5000
+  }];
 
   constructor(public afficherPageService: AfficherPageService, public favoriteService: FavoriteService, public tokenStorage: TokenStorageService, private router: Router) { }
 
@@ -42,6 +55,7 @@ export class PageRecetteComponent implements OnInit {
 
   }
 
+  //verifier si une liste est vide
   isEmpty(obj) {
     for (var key in obj) {
       if (obj.hasOwnProperty(key))
@@ -50,6 +64,7 @@ export class PageRecetteComponent implements OnInit {
     return true;
   }
 
+  //recuperer la recette par l'Id
   recupererRecette(id) {
     this.afficherPageService.recupererRecetteById(id).subscribe(
       data => {
@@ -65,6 +80,8 @@ export class PageRecetteComponent implements OnInit {
       })
   }
 
+
+  //telecharger la recette en pdf
   telecharger() {
     const options = {
       name: 'output.pdf',
@@ -95,24 +112,46 @@ export class PageRecetteComponent implements OnInit {
     })
   }
 
-  ajoutrecettefavorite() {
 
-    
+  //methode ajout aux favoris
+  ajoutrecettefavorite() {
       let username = this.tokenStorage.getUsername()
+      let token = this.tokenStorage.getToken
       let recipeId =this.recette._id
+      if(token){
         this.favoriteService.addFavoriteRecipesUser(username, recipeId)
         .subscribe(
-          recettefav => {this.recettefavorite= recettefav},
-          error => { console.log(error)}
+          recettefav => {this.recettefavorite= recettefav
+          
+          },
+          
+          error => { console.log(error) 
+                      this.router.navigate(['/login'])}
+         
         )
+        this.pasconnecter = true,
       console.log("-----------------"+ username)
         console.log("Username "+ recipeId)
-       
-    
+      
+        } 
+}
+add(): void {
+  this.alerts.push({
+    type: 'info',
+    timeout: 5000
+  });
 }
 
 
-  
+  onClosed(dismissedAlert: AlertComponent): void {
+    this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
+  }
+
+
+  reloadPage() {
+    window.location.reload();
+  }
+
 
 
 }

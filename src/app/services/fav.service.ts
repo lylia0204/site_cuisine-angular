@@ -16,11 +16,12 @@ export class  FavoriteService {
   constructor(private http: HttpClient) { }
 
 
-
+//ajouter aux favoris
   addFavoriteRecipesUser(username , recipeId): Observable<any> {
     return this.http.post(this.favUrl+ "/api/user/favoriterecipe/add/"+ username +"/"+  recipeId,  {responseType:'text' as 'json'});
   }
 
+  //recuperer liste des favoris
   getAllFavoriteRecipes(username): Observable<FavoriteRecipes[]> {
     return this.http.get<FavoriteRecipes[]>(this.favUrl + "/api/user/favoriterecipe/findall/"+ username)
   }

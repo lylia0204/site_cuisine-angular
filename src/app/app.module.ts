@@ -25,7 +25,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecetteCategorieComponent } from './recette-categorie/recette-categorie.component';
 import { RecetteRechercheComponent } from './recette-recherche/recette-recherche.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AdminComponent,
     HomeComponent,
     RecetteCategorieComponent,
-    RecetteRechercheComponent
+    RecetteRechercheComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -51,8 +55,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     CollapseModule.forRoot(),
     PaginationModule.forRoot(),
+    PopoverModule.forRoot(),
     NgxPaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AlertModule
     
   ],
   providers: [httpInterceptorProviders],

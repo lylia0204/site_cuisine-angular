@@ -9,12 +9,12 @@
   <div class="container">
     <div class="d-flex justify-content-center h-100">
       <div class="card">
-        <div class="card-header">
-          <h3>Créer un compte</h3>
+        <div class="card-header ">
+          <h3 class="d-flex justify-content-center mt-3">Créer un compte</h3>
         
         </div>
-        <div *ngIf="isSignedUp; else signupForm">
-          <a class="nav-link" routerLink="/login"> Votre compte est enregistré! 
+        <div *ngIf="isSignedUp; else signupForm" >
+          <a class="nav-link" style = "color: white; text-align: center"  routerLink="/login"> Votre compte est enregistré! 
               Connectez-vous.</a> 
         </div>
 
@@ -23,40 +23,47 @@
   
     <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
-        <label for="username">Nom Utilisateur</label>
+        <label for="username">Nom utilisateur</label>
         <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
           required />
         <div *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Champs obligatoire</div>
+          <div *ngIf="username.errors.required" class="alert alert-danger">Champs obligatoire</div>
         </div>
-      </div>
-      <div class="form-group">
+      
         <label for="email">Email</label>
-        <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" required email />
+        <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" required email
+        placement="right"  
+        popover="ex: monnom@email.com"
+          triggers="keypress:focusout"  />
         <div *ngIf="f.submitted && email.invalid">
-          <div *ngIf="email.errors.required">Email obligatoire</div>
-          <div *ngIf="email.errors.email">Email incorrecte</div>
+          <div *ngIf="email.errors.required" class="alert alert-danger">Email obligatoire</div>
+          <div *ngIf="email.errors.email"class="alert alert-danger">Email incorrecte</div>
         </div>
-      </div>
-      <div class="form-group">
+      
         <label for="password">Mot de passe</label>
         <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
-          required minlength="6" />
+          required minlength="8"   placement="right"
+          popover="Minimum 8 caractères"
+          triggers="keypress:focusout" />
+
+
           <label for="password">Confirmer Mot de passe</label>
         <input type="password" class="form-control" name="password2" [(ngModel)]="password2" #password="ngModel"
-          required minlength="6" />
-          <div *ngIf= "invalidmessage" class="alert alert-warning"> mot de passe differents </div>
-         
+          required minlength="8"  placement="right"
+          popover="Minimum 8 caractères"
+          triggers="keypress:focusout" />
+          <div *ngIf= "invalidmessage" class="alert alert-danger"> mot de passe differents </div>
         <div *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Mot de passe obligatoire</div>
-          <div *ngIf="password.errors.minlength">Mot de passe doit contenir plus de 6 caractère</div>
+          <div *ngIf="password.errors.required" class="alert alert-danger">Mot de passe obligatoire</div>
+          <div *ngIf="password.errors.minlength" class="alert alert-warning">Mot de passe doit contenir plus de 8 caractère</div>
         </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary">INSCRIPTION</button>
-        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
-         Erreur Enregistrement !<br/>{{errorMessage}}
-        </div>
+       
+        
+    </div>
+    <div>
+      <button class="btn btn-lg btn-primary btn-block btn-signin" >INSCRIPTION</button>
+      <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-danger">
+      email et/ou nom utilisateur déjà existants </div>
       </div>
     </form>
   
