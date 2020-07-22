@@ -21,8 +21,8 @@
             <h3 class="section-subheading text-muted">Régalez-vous !</h3>
         </div>
         <div class="text-center" *ngIf="messagevide">
-            <p> Vous n'avez pas encore de recettes enregistrées. Cliquez <a routerLink="/recette"> ici </a>pour
-                decouvrir nos recettes</p>
+           <b> <p> Vous n'avez pas de recettes enregistrées. <br> Cliquez <a routerLink="/recette"> ici </a>pour
+                decouvrir nos recettes.</p></b>
         </div>
         <div class="row">
             <div *ngFor="let recette of recettes | paginate: { itemsPerPage: 18, currentPage: pageActuelle }"
