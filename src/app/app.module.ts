@@ -27,6 +27,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     PaginationModule.forRoot(),
+    ModalModule.forRoot(),
     PopoverModule.forRoot(),
     NgxPaginationModule,
     BrowserAnimationsModule,
