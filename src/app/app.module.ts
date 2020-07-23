@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,9 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecetteCategorieComponent } from './recette-categorie/recette-categorie.component';
 import { RecetteRechercheComponent } from './recette-recherche/recette-recherche.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -53,8 +53,10 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     AppRoutingModule,
     RatingModule.forRoot(),
     FormsModule,
+    BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     PaginationModule.forRoot(),
+    ModalModule.forRoot(),
     PopoverModule.forRoot(),
     NgxPaginationModule,
     BrowserAnimationsModule,

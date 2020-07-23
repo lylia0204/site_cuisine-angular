@@ -53,6 +53,14 @@ export class HeaderComponent implements OnInit {
           menuArea.classList.remove("navbar-shrink");
       }
   })
+
+  
+
+
+
+  
+
+
   
   // pour la connection et la deconnection du user
   if (this.tokenStorage.getToken()) {
@@ -73,8 +81,8 @@ export class HeaderComponent implements OnInit {
   }
   logout() {
     this.tokenStorage.signOut();
-   this._router.navigate(["/acceuil"])
-    window.location.reload()   
+    this._router.navigate(["/"])
+    window.location.assign("/")   
   }
 
  
@@ -91,6 +99,7 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/recetteRecherche', this.nomRecherche]);
   }
 
+ 
 
 
 
