@@ -29,12 +29,13 @@ export class RecetteComponent implements OnInit {
   
   
   modalRef: BsModalRef;
-  
+ 
   
   
   constructor(public rechercheService : RechercheService, public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router, private modalService: BsModalService , public favoriteService: FavoriteService, public tokenStorage: TokenStorageService) {}
   
   recettes: Recette[] 
+  recette: Recette 
   idRecette: string;
   
   //pagination
@@ -45,7 +46,7 @@ export class RecetteComponent implements OnInit {
 
 
 //pour afficher note de la recette
-rate: number
+rate: number = 4
 max: number = 5;
 
 //
@@ -125,9 +126,11 @@ openModalWithClass(template: TemplateRef<any>) {
     template,
     Object.assign({}, { class: 'gray modal-xl' })
   );
-}
- 
+  if (this.isEmpty(this.materiels)) {
+    this.vrai = true;
 
+  }
+}
 
 
 //verifier si une liste est vide

@@ -2,43 +2,56 @@
     <div class="container col-sm-7">
         <form name="form" method="post">
             <div class="row form-group">
-                 
-                  
-                <input  type="text" class="search-query form-control col-md-3" placeholder="Ingredient 1" name="ingredient1"  [(ngModel)]="ingredient1"  />
-                <input [(ngModel)]="ingredient2" name="ingredient2"  type="text"  class="search-query form-control col-md-3" placeholder="Ingredient 2" />
-                <input [(ngModel)]="ingredient3" name="ingredient3"  type="text"  class="search-query form-control col-md-3" placeholder="Ingredient 3" />
-                <button class="col-md-3 btn btn-success search-btn" type="submit" (click)="rechercherParIngredients()" style="background-color: #fed136;border:none" >
-                    <a> <i class="fa fa-search" style="font-size:25px;color:black;"></i> </a>
+
+
+                <input type="text" class="search-query form-control col-md-3" placeholder="Ingredient 1"
+                    name="ingredient1" [(ngModel)]="ingredient1" />
+                <input [(ngModel)]="ingredient2" name="ingredient2" type="text"
+                    class="search-query form-control col-md-3" placeholder="Ingredient 2" />
+                <input [(ngModel)]="ingredient3" name="ingredient3" type="text"
+                    class="search-query form-control col-md-3" placeholder="Ingredient 3" />
+                <button class="col-md-1 btn btn-success search-btn" type="submit" (click)="rechercherParIngredients()"
+                    style="background-color: #fed136;border:none">
+                    <a> <i class="fa fa-search" style="font-size:25px;color:#fff;"></i> </a>
                 </button>
             </div>
-          </form>
+        </form>
         <form name="form" method="post">
             <div class="row form-group">
-                 
-                  
-                <input  type="text" class="search-query form-control col-md-3" placeholder="Recette" name="nom"  [(ngModel)]="nom"  />
-                <input [(ngModel)]="avecIngredient" name="avecIngredient"  type="text"  class="search-query form-control col-md-3" placeholder="Avec ingredient " />
-                <input [(ngModel)]="sansIngredient" name="sansIngredient"  type="text"  class="search-query form-control col-md-3" placeholder="Sans ingredient " />
-                <button class="col-md-3 btn btn-success search-btn" type="submit" (click)="rechercherAvecSansIngredients()" style="background-color: #fed136;border:none" >
-                    <a> <i class="fa fa-search" style="font-size:25px;color:black;"></i> </a>
+
+
+                <input type="text" class="search-query form-control col-md-3" placeholder="Nom de la recette" name="nom"
+                    [(ngModel)]="nom" />
+                <input [(ngModel)]="avecIngredient" name="avecIngredient" type="text"
+                    class="search-query form-control col-md-3" placeholder="Avec ingredient " />
+                <input [(ngModel)]="sansIngredient" name="sansIngredient" type="text"
+                    class="search-query form-control col-md-3" placeholder="Sans ingredient " />
+                <button class="col-md-1 btn btn-success search-btn" type="submit"
+                    (click)="rechercherAvecSansIngredients()" style="background-color: #fed136;border:none">
+                    <a> <i class="fa fa-search" style="font-size:25px;color:#fff;"></i> </a>
                 </button>
             </div>
-          </form>
+        </form>
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Les meilleures Recettes</h2>
             <h3 class="section-subheading text-muted">Réunies pour VOUS !!!</h3>
         </div>
+
+
         <div class="row">
             <div *ngFor="let recette of recettes | paginate: { itemsPerPage: 18, currentPage: pageActuelle }"
                 class="col-lg-4 col-sm-5 mb-4">
                 <div class="portfolio-item">
+
+
                     <a class="portfolio-link" routerLink="/pageRecette" data-toggle="modal"
-                        (click)="openModalWithClass(template)">
+                        (click)="openModalWithClass(template)" >
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"></div>
                         </div>
                         <img class="img-fluid" [src]="recette.imageRecette" alt="...." />
                     </a>
+
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">{{recette.nomRecette}}</div>
                         <div class="portfolio-caption-subheading text-muted">{{recette.note}}</div>
@@ -47,12 +60,12 @@
 
                 <!-- le modal de recette -->
                 <ng-template #template>
-                    
-                        
-                        <button type="button" class="close pull-right ml-auto" aria-label="Close"  (click)="modalRef.hide()">
-                            <span aria-hidden="true" style="size: 50px;">&times;</span>
-                        </button>
-                   
+
+
+                    <button type="button" class="close pull-right ml-auto" aria-label="Close" (click)="modalRef.hide()">
+                        <span aria-hidden="true" style="size: 50px;">&times;</span>
+                    </button>
+
                     <!-- recette area -->
                     <div class="container " id="recette-pdf">
                         <div class="row">
@@ -61,7 +74,7 @@
                                     <!-- <p>titre</p> -->
                                     <h4>{{recette.nomRecette}}</h4>
                                     <div class="card">
-                                        <rating [ngModel]="rate" [max]="max" [readonly]="isReadonly" size="50"></rating>
+                                        <rating [ngModel]="rate"  [max]="max" [readonly]="isReadonly" size="50"></rating>
                                         <b>{{recette.note}}</b>
                                     </div>
                                 </div>
@@ -77,13 +90,13 @@
 
 
 
-                                
-                                    <div class="recepie_details_area col-xl-6 col-md-6">
-                                        <div class="recepies_thumb">
-                                            <img src="{{recette.imageRecette}}" alt="">
-                                        </div>
+
+                                <div class="recepie_details_area col-xl-6 col-md-6">
+                                    <div class="recepies_thumb">
+                                        <img src="{{recette.imageRecette}}" alt="">
                                     </div>
-                                
+                                </div>
+
 
 
 
@@ -126,7 +139,8 @@
                                                 <div class="offset-1 col-md-1">
                                                     <button class="main-btn btn btn-info" popover=" Favoris"
                                                         triggers="mouseenter:mouseleave"> <a
-                                                            (click)="ajoutrecettefavorite(recette._id)"><i class="fa fa-heart-o"
+                                                            (click)="ajoutrecettefavorite(recette._id)"><i
+                                                                class="fa fa-heart-o"
                                                                 style="font-size:20px;color:#fff"></i> </a>
                                                     </button>
                                                     <!-- <div *ngIf="message">

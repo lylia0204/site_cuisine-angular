@@ -33,16 +33,16 @@
              
             <div *ngIf="f.submitted && password.invalid">
               <div *ngIf="password.errors.required" class= "alert-danger">Le mot de passe est obligatoire</div>
-              <div *ngIf="password.errors.minlength" class= "alert-danger"> attention 8 caractères minimum</div>
+              <div *ngIf="password.errors.minlength" class= "alert-danger"> Attention 8 caractères minimum</div>
             </div>
           </div>
 					<br>
 					
            
-            <button class="btn btn-lg btn-primary btn-block btn-signin">Se connecter</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" style="background-color: #fed136;">Se connecter</button>
             <div class="d-flex justify-content-center links"  >  <a href="/signup" class="forgot-password">Mot de passe oublié?</a> </div>
             <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
-              Erreur : login et/ou mot de passe faux.
+              Erreur : Login et/ou mot de passe erroné/s.
             </div>
          <br>
          <br>

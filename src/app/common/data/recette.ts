@@ -5,6 +5,7 @@ export class Recette{
       public nomRecette : string,
       public  imageRecette : string,
       public note : string,
+      public noten : Number = parseInt(note),
       public  tpsTotal : string,
       public  difficulte :string,
       public  portion :string,

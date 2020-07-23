@@ -88,13 +88,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
- 
-    margin-bottom: 0px;
-      line-height: 28px;
-      font-size: 25pt;
-      letter-spacing: 0.5px;
-      color: #646464;
-    font-family: 'Poppins', sans-serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+    // margin-bottom: 0px;
+    //   line-height: 28px;
+    //   font-size: 25pt;
+    //   letter-spacing: 0.5px;
+    //   color: #646464;
+    // font-family: 'Poppins', sans-serif;
   
 }
 
@@ -10556,3 +10557,323 @@ section#contact form#contactForm :-ms-input-placeholder {
     //text-transform: uppercase;
 	text-decoration:none;
 }
+
+
+////////////////////////////////css page recette/////////////////////
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: #333;
+	
+}
+//ajouter
+#id-section{
+    margin-top: 50px;
+}
+//text source recette
+.source-recette{
+  font-size: large;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+#recette-temps{
+    margin-top: 30px;
+    padding: 5px;
+
+}
+.mb-60 {
+	margin-bottom: 80px;
+}
+.section-title p {
+	font-size: 24px;
+	font-family: Oleo Script;
+	margin-bottom: 0px;
+}
+.section-title h4 {
+	font-size: 40px;
+	text-transform: capitalize;
+	color: #C90103;
+	position: relative;
+	display: inline-block;
+	padding-bottom: 25px;
+}
+.section-title h4::before {
+	width: 80px;
+	height: 1.5px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -40px;
+}
+.section-title h4::before, .section-title h4::after {
+	position: absolute;
+	content: "";
+	background-color: #C90103;
+}
+#myTabContent {
+	margin-top: 50px;
+}
+.menu_tab {
+	width: auto;
+	margin: 0 auto;
+}
+.nav-tabs .nav-item {
+	margin-bottom: -1px;
+}
+.nav-item a {
+  color: #333;
+  
+}
+.menu_tab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: white;
+	background-color: #C90103;
+	border-color: #C90103;
+}
+.single_menu_list {
+    position: relative;
+    //changee
+	padding-left: 10px;
+	margin-bottom: 110px;
+}
+.conseil-recette{
+  border: 2px solid #C90103;
+  padding: 10px;
+  border-bottom-left-radius: 25px;
+  margin-bottom: 15px;
+}
+
+ 
+
+
+
+.single_menu_list:hover img {
+	border-radius: 0;
+	transition: .4s
+}
+//ajouter
+.tire-tire{
+    border-bottom: 1px dashed #C90103;
+    padding: 10px;
+
+}
+
+
+.single_menu_list h4 {
+	font-size: 20px;
+	border-bottom: 1px dashed #C90103;
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+}
+
+.single_menu_list h4 span {
+	float: right;
+	font-weight: bold;
+	color: #C90103;
+	font-style: italic;
+}
+
+/* image et detailles recette */
+
+
+.about-section{
+	padding-top:40px;
+}
+.about-image {
+    position: relative;
+}
+.about-image::before {
+    position: absolute;
+    content: '';
+    background-image: url(https://i.ibb.co/d6KQxz0/dots.jpg);
+    background-position: center center;
+    background-size: 100%;
+    width: 375px;
+    height: 350px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+.about-image .single-image {
+    width: 360px;
+}
+// .float-left {
+//     float: left;
+// }
+.about-image .single-image img {
+    width: 100%;
+}
+// .about-image .single-image.image-tow {
+//     margin-top: -200px;
+//     position: relative;
+//     z-index: 5;
+// }
+
+.about-image .single-image {
+    width: 360px;
+}
+// .float-right {
+//     float: right;
+// }
+.about-content h3{
+	color:#333;
+	font-family: 'Poppins', sans-serif;
+	padding-bottom:10px;
+}
+
+.about-content p{
+	margin-bottom: 0px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    color: #646464;
+	font-family: 'Poppins', sans-serif;
+}
+.main-btn {
+    display: inline-block;
+    margin-top: 50px;
+    font-weight: 800;
+    text-align: center;
+    border: 1px solid #C90103;
+    padding:  8px;
+    line-height: 15px;
+    color: #fff;
+    border-radius: 25px;
+    transition: all .0.8s ease-out 0s;
+    background-color: #C90103;
+    letter-spacing: 2px;
+    //text-transform: uppercase;
+	text-decoration:none;
+}
+
+.main-btn:hover{
+	background: #fed136;
+	color:#fff;
+	border-color:#fed136;
+    transition: all .8s ease-out 0s;
+	text-decoration:none;
+}
+
+//partie details
+// ajouter
+//li::before {content: "•"; color: red}
+
+
+.recepie_details_area .recepies_info {
+    padding-left: 68px;
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 18, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+    .recepie_details_area .recepies_info {
+      padding-left: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* line 18, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+    .recepie_details_area .recepies_info {
+      padding-left: 0px;
+    }
+  }
+  
+  /* line 27, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info h3 {
+    font-size: 30px;
+    color: #222222;
+    margin-bottom: 23px;
+  }
+  
+  /* line 32, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info p {
+    color: #777777;
+    font-size: 14px;
+  }
+  
+  /* line 36, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .resepies_details {
+    margin-top: 38px;
+    margin-bottom: 30px;
+  }
+  
+  /* line 41, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .resepies_details ul li p {
+    color: #777777;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+ 
+  }
+  
+  /* line 47, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .resepies_details ul li p strong {
+    width: 100px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+    display: inline-block;
+  }
+  
+  /* line 54, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .resepies_details ul li p i {
+    color: #ffcc00;
+  }
+  
+  /* line 62, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .links a {
+    color: #cccccc;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  /* line 66, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .links a:hover {
+    color: #000;
+  }
+
+  .recepie_details_area .recepies_info .resepies_details ul li p {
+    color: #777777;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  
+  /* line 47, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .resepies_details ul li p strong {
+    width: 100px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+    display: inline-block;
+  }
+  
+  /* line 54, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
+  .recepie_details_area .recepies_info .resepies_details ul li p i {
+    color: #ffcc00;
+  }
+  .recepies_info{
+    border: 1px solid  #C90103;
+    padding-top: 3rem;
+  }
+
+  //alert ajouot favoris
+  .alert-md-color {
+    background-color: #7B1FA2;
+    border-color: #4A148C;
+    color: #fff;
+  }
+
+
+  ////////////test image page recette ////////////////
+  .recepie_details_area .recepies_thumb {
+     margin-top: 30px;
+  }
+  
+  .recepie_details_area .recepies_thumb img {
+    width: 120%;
+  }
+  
