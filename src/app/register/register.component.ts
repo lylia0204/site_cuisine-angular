@@ -57,6 +57,15 @@ export class RegisterComponent implements OnInit {
      
     } else this.invalidmessage =true;
   }
+
+remplissageForm(){
+
+  this.form.username = "lylemi02"
+  this.form.email ="lylemi@gmail.com"
+  this.form.password= "azertyui"
+  this.password2 = "azertyui"
+}
+
   
 }
 
