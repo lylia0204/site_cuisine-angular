@@ -32,7 +32,7 @@ export class RecetteComponent implements OnInit {
   
   
   
-  constructor( public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router, private modalService: BsModalService , public favoriteService: FavoriteService, public tokenStorage: TokenStorageService) {}
+  constructor(public rechercheService : RechercheService, public recetteService : RecetteService, public afficherPageService : AfficherPageService, private _router:Router, private modalService: BsModalService , public favoriteService: FavoriteService, public tokenStorage: TokenStorageService) {}
   
   recettes: Recette[] 
   idRecette: string;
@@ -68,7 +68,19 @@ alerts: any[] = [{
   msg: `Well done! You successfully read this important alert message. (added: ${new Date().toLocaleTimeString()})`,
   timeout: 5000
 }];
+
+//retour recherche vide
+messageListeVide: boolean;
   
+//atribut de recherche par ingredients
+ingredient1 : string = ""
+ingredient2 : string = ""
+ingredient3 : string =""
+ 
+//atribut de recherche avec/sans ingredient
+nom : string = "" 
+avecIngredient : string = ""
+sansIngredient : string =""
  
   ngOnInit(): void {
 
@@ -82,6 +94,8 @@ alerts: any[] = [{
       this.randomize(this.recettes)},
       error => { console.log(error)}
     )
+
+    
   }
 
   //recuperer ID de recette
@@ -125,9 +139,6 @@ isEmpty(obj) {
   return true;
 }
 
-
-
-
 //telecharger la recette en pdf
 telecharger() {
   const options = {
@@ -161,10 +172,10 @@ telecharger2() {
 
 
 //methode ajout aux favoris
-ajoutrecettefavorite(recette) {
+ajoutrecettefavorite(recipeId) {
     let username = this.tokenStorage.getUsername()
     let token = this.tokenStorage.getToken
-    let recipeId =recette._id
+    //let recipeId =recette._id
     if(token){
       this.favoriteService.addFavoriteRecipesUser(username, recipeId)
       .subscribe(
@@ -173,7 +184,9 @@ ajoutrecettefavorite(recette) {
         },
         
         error => { console.log(error) 
-                    this._router.navigate(['/login'])}
+          this.closeAllModals();
+                    this._router.navigate(['/login']) 
+                    }
        
       )
       this.pasconnecter = true,
@@ -200,8 +213,49 @@ reloadPage() {
 }
 
 
+/////////test fermeture modal /////////
+private closeAllModals() {
+  for (let i = 1; i <= this.modalService.getModalsCount(); i++) {
+    this.modalService.hide(i);
+  }
+}
 
+ //////recherche par ingredient
+ 
+ rechercherParIngredients() {
 
+   console.log(" in1 ==== "+this.ingredient1 +" in2 ==== "+this.ingredient2 +" in3 ==== "+this.ingredient3 )
+
+  this.rechercheService.rechercherParIngredient(this.ingredient1, this.ingredient2, this.ingredient3).subscribe(
+      data => { this.recettes = data;
+        //console.log("le resultat recherche par ingredient ========= "+ JSON.stringify(data));
+         if(this.isEmpty(this.recettes)){
+        console.log("liste viiiide ")
+        this.messageListeVide = true;
+      }else{
+        return this.recettes
+      }
+      console.log("liste de recette "+JSON.stringify(this.recettes))
+      })
+}
+ //////recherche par ingredient
+ 
+ rechercherAvecSansIngredients() {
+
+   console.log(" in1 ==== "+this.nom +" in2 ==== "+this.avecIngredient +" in3 ==== "+this.sansIngredient )
+
+  this.rechercheService.rechercherAvecSansIngredient(this.nom, this.avecIngredient, this.sansIngredient).subscribe(
+      data => { this.recettes = data;
+        //console.log("le resultat recherche par ingredient ========= "+ JSON.stringify(data));
+         if(this.isEmpty(this.recettes)){
+        console.log("liste viiiide ")
+        this.messageListeVide = true;
+      }else{
+        return this.recettes
+      }
+      console.log("liste de recette "+JSON.stringify(this.recettes))
+      })
+}
 
 
 }

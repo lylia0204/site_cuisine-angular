@@ -1,5 +1,29 @@
 <section class="page-section bg-light" id="portfolio">
     <div class="container col-sm-7">
+        <form name="form" method="post">
+            <div class="row form-group">
+                 
+                  
+                <input  type="text" class="search-query form-control col-md-3" placeholder="Ingredient 1" name="ingredient1"  [(ngModel)]="ingredient1"  />
+                <input [(ngModel)]="ingredient2" name="ingredient2"  type="text"  class="search-query form-control col-md-3" placeholder="Ingredient 2" />
+                <input [(ngModel)]="ingredient3" name="ingredient3"  type="text"  class="search-query form-control col-md-3" placeholder="Ingredient 3" />
+                <button class="col-md-3 btn btn-success search-btn" type="submit" (click)="rechercherParIngredients()" style="background-color: #fed136;border:none" >
+                    <a> <i class="fa fa-search" style="font-size:25px;color:black;"></i> </a>
+                </button>
+            </div>
+          </form>
+        <form name="form" method="post">
+            <div class="row form-group">
+                 
+                  
+                <input  type="text" class="search-query form-control col-md-3" placeholder="Recette" name="nom"  [(ngModel)]="nom"  />
+                <input [(ngModel)]="avecIngredient" name="avecIngredient"  type="text"  class="search-query form-control col-md-3" placeholder="Avec ingredient " />
+                <input [(ngModel)]="sansIngredient" name="sansIngredient"  type="text"  class="search-query form-control col-md-3" placeholder="Sans ingredient " />
+                <button class="col-md-3 btn btn-success search-btn" type="submit" (click)="rechercherAvecSansIngredients()" style="background-color: #fed136;border:none" >
+                    <a> <i class="fa fa-search" style="font-size:25px;color:black;"></i> </a>
+                </button>
+            </div>
+          </form>
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Les meilleures Recettes</h2>
             <h3 class="section-subheading text-muted">Réunies pour VOUS !!!</h3>
@@ -102,15 +126,14 @@
                                                 <div class="offset-1 col-md-1">
                                                     <button class="main-btn btn btn-info" popover=" Favoris"
                                                         triggers="mouseenter:mouseleave"> <a
-                                                            (click)="ajoutrecettefavorite(recette)"><i class="fa fa-heart-o"
+                                                            (click)="ajoutrecettefavorite(recette._id)"><i class="fa fa-heart-o"
                                                                 style="font-size:20px;color:#fff"></i> </a>
                                                     </button>
-                                                    <div *ngIf="message">
+                                                    <!-- <div *ngIf="message">
                                                         <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout"
                                                             (onClosed)="onClosed(alert)">ajoutée</alert>
 
-                                                        <!-- <span >ajoutée!</span> -->
-                                                    </div>
+                                                    </div> -->
                                                     <div *ngIf="pasconnecter" router="/login"></div>
                                                 </div>
                                             </div>

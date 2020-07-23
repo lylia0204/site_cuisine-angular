@@ -45,6 +45,7 @@ export class RecetteRechercheComponent implements OnInit {
         console.log("liste de recette "+JSON.stringify(this.recettes))
         })
   }
+ 
 
    //recuperer ID de recette
    recupererIdRecette(recette){
