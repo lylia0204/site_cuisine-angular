@@ -10,7 +10,7 @@ import { FavoriteRecipes } from '../auth/favoriterecipes';
 })
 export class  FavoriteService {
 
-  private favUrl = 'http://ec2-15-188-89-5.eu-west-3.compute.amazonaws.com:8886';
+  private favUrl = 'http://ec2-15-188-82-154.eu-west-3.compute.amazonaws.com:8886';
   
   
   constructor(private http: HttpClient) { }
